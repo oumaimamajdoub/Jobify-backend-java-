@@ -23,7 +23,7 @@ import java.util.List;
 public class candidateCRUD {
      public void ajoutercandidate(User fp){
         try {
-            String requete1 = "INSERT INTO user (age,nom,prenom,email,mdp,numTel,Adresse,etat)"
+            String requete1 = "INSERT INTO user (age,nom,prenom,email,mdp,numTel,Adresse,Role)"
                     + "VALUES (?,?,?,?,?,?,?,'candidate')";
             PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete1);
             pst.setInt(1, fp.getAge());
@@ -97,7 +97,7 @@ public class candidateCRUD {
                 fp.setMdp(rs.getString("mdp"));
                 fp.setNumTel(rs.getString("numTel"));
                 fp.setAdresse(rs.getString("Adresse"));
-                fp.setEtat(rs.getString("etat"));
+                fp.setEtat(rs.getString("Role"));
                 myList.add(fp);
                 
             }

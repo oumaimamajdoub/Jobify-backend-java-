@@ -21,7 +21,7 @@ import java.util.List;
 public class userCRUD {
     public void ajouteruser(User fp){
         try {
-            String requete1 = "INSERT INTO user (age,nom,prenom,email,mdp,numTel,Adresse,etat)"
+            String requete1 = "INSERT INTO user (age,nom,prenom,email,mdp,numTel,Adresse,Role)"
                     + "VALUES (?,?,?,?,?,?,?,?)";
             PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete1);
             pst.setInt(1, fp.getAge());
@@ -31,7 +31,7 @@ public class userCRUD {
             pst.setString(5, fp.getMdp());
             pst.setString(6, fp.getNumTel());
             pst.setString(7, fp.getAdresse());
-            pst.setString(8, fp.getEtat());
+            pst.setString(8, fp.getRole());
             pst.executeUpdate();
             System.out.println("user ajouté avec succés! ");
             
@@ -62,7 +62,7 @@ public class userCRUD {
     public void modifierUser(int a, User fp){
         
         try {
-            String requete3 = " UPDATE `user` SET `age`=?,`nom`=?,`prenom`=?,`email`=?,`mdp`=?,`numTel`=?,`Adresse`=?,`etat`=? WHERE id=?";
+            String requete3 = " UPDATE `user` SET `age`=?,`nom`=?,`prenom`=?,`email`=?,`mdp`=?,`numTel`=?,`Adresse`=?,`Role`=? WHERE id=?";
             PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete3);
             pst.setInt(1, fp.getAge());
             pst.setString(2, fp.getNom());
@@ -71,7 +71,7 @@ public class userCRUD {
             pst.setString(5, fp.getMdp());
             pst.setString(6, fp.getNumTel());
             pst.setString(7, fp.getAdresse());
-            pst.setString(8, fp.getEtat());
+            pst.setString(8, fp.getRole());
             pst.setInt(9, a);
             pst.executeUpdate();
             System.out.println("user modifiée avec succès!");
@@ -97,7 +97,7 @@ public class userCRUD {
                 fp.setMdp(rs.getString("mdp"));
                 fp.setNumTel(rs.getString("numTel"));
                 fp.setAdresse(rs.getString("Adresse"));
-                fp.setEtat(rs.getString("etat"));
+                fp.setEtat(rs.getString("Role"));
                 myList.add(fp);
                 
             }

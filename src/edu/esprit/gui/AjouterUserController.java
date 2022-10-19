@@ -7,11 +7,16 @@ package edu.esprit.gui;
 
 import edu.esprit.entities.User;
 import edu.esprit.services.userCRUD;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
@@ -68,6 +73,24 @@ public class AjouterUserController implements Initializable {
         
         uc.ajouteruser(u);
         
+        FXMLLoader loader =
+                new FXMLLoader(getClass().getResource("AffichageUser.fxml"));
+        try {
+            Parent root = loader.load();
+            AffichageUserController auc= loader.getController();
+            auc.setTfnom(u.getNom());
+            auc.setTfprenom(u.getPrenom());
+            auc.setTfemail(u.getEmail());
+            auc.setTfage(""+u.getAge());
+            auc.setTfmdp(u.getMdp());
+            auc.setTfnumTel(u.getNumTel());
+            auc.setTfAdresse(u.getAdresse());
+            auc.setTfRole(u.getRole());
+            
+            tfnom.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(AjouterUserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

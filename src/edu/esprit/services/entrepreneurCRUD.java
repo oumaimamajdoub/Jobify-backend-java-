@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 public class entrepreneurCRUD {
      public void ajouterentrepreneur(User fp){
         try {
-            String requete1 = "INSERT INTO user (age,nom,prenom,email,mdp,numTel,Adresse,etat)"
+            String requete1 = "INSERT INTO user (age,nom,prenom,email,mdp,numTel,Adresse,Role)"
                     + "VALUES (?,?,?,?,?,?,?,'entrepreneur')";
             PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete1);
             pst.setInt(1, fp.getAge());
@@ -98,7 +98,7 @@ public class entrepreneurCRUD {
                 fp.setMdp(rs.getString("mdp"));
                 fp.setNumTel(rs.getString("numTel"));
                 fp.setAdresse(rs.getString("Adresse"));
-                fp.setEtat(rs.getString("etat"));
+                fp.setEtat(rs.getString("Role"));
                 myList.add(fp);
                 
             }

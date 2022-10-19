@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="edu.esprit.gui.AffichageUserController">
+       <children>
+      <Label layoutX="100.0" layoutY="188.0" text="nom" />
+      <Label layoutX="89.0" layoutY="248.0" text="prenom" />
+      <Label layoutX="103.0" layoutY="307.0" text="age" />
+      <Label layoutX="97.0" layoutY="364.0" text="email" />
+      <Label layoutX="100.0" layoutY="424.0" text="mdp" />
+      <Label layoutX="91.0" layoutY="485.0" text="numTel" />
+      <Label layoutX="90.0" layoutY="539.0" text="Adresse" />
+      <Label layoutX="100.0" layoutY="596.0" text="Role" />
+      <TextField fx:id="tfnom" editable="false" layoutX="223.0" layoutY="183.0" />
+      <TextField fx:id="tfprenom" editable="false" layoutX="223.0" layoutY="243.0" />
+      <TextField fx:id="tfage" editable="false" layoutX="223.0" layoutY="302.0" />
+      <TextField fx:id="tfemail" editable="false" layoutX="223.0" layoutY="359.0" />
+      <TextField fx:id="tfmdp" editable="false" layoutX="223.0" layoutY="419.0" />
+      <TextField fx:id="tfnumTel" editable="false" layoutX="223.0" layoutY="480.0" />
+      <TextField fx:id="tfAdresse" editable="false" layoutX="223.0" layoutY="534.0" />
+      <TextField fx:id="tfRole" editable="false" layoutX="223.0" layoutY="591.0" />
+   </children>
+</AnchorPane>

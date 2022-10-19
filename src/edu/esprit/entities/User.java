@@ -17,9 +17,9 @@ public class User {
   private String mdp;
   private String numTel;
   private String Adresse;
-  private String etat;
+  private String Role;
 
-    public User(int age, String nom, String prenom, String email, String mdp, String numTel, String Adresse, String etat) {
+    public User(int age, String nom, String prenom, String email, String mdp, String numTel, String Adresse, String Role) {
         this.age = age;
         this.nom = nom;
         this.prenom = prenom;
@@ -27,7 +27,7 @@ public class User {
         this.mdp = mdp;
         this.numTel = numTel;
         this.Adresse = Adresse;
-        this.etat = etat;
+        this.Role = Role;
     }
 
     public User(int id, int age, String nom, String prenom, String email, String mdp, String numTel, String Adresse) {
@@ -118,12 +118,12 @@ public class User {
         this.Adresse = Adresse;
     }
 
-    public String getEtat() {
-        return etat;
+    public String getRole() {
+        return Role;
     }
 
-    public void setEtat(String etat) {
-        this.etat = etat;
+    public void setEtat(String Role) {
+        this.Role = Role;
     }
 
     
@@ -227,7 +227,7 @@ public class User {
 
 */    
 
-    public User(int id, int age, String nom, String prenom, String email, String mdp, String numTel, String Adresse, String etat) {
+    public User(int id, int age, String nom, String prenom, String email, String mdp, String numTel, String Adresse, String Role) {
         this.id = id;
         this.age = age;
         this.nom = nom;
@@ -236,6 +236,6 @@ public class User {
         this.mdp = mdp;
         this.numTel = numTel;
         this.Adresse = Adresse;
-        this.etat = etat;
+        this.Role = Role;
     }
 }
