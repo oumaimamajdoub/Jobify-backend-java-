@@ -14,11 +14,35 @@ public class admin {
   private int id;
   private String email;
   private String mdp;
+  private String Role;
 
     public admin(int id, String email, String mdp) {
         this.id = id;
         this.email = email;
         this.mdp = mdp;
+    }
+
+    public admin(String email, String mdp) {
+        this.email = email;
+        this.mdp = mdp;
+    }
+
+    public admin() {
+    }
+
+    public admin(int id, String email, String mdp, String Role) {
+        this.id = id;
+        this.email = email;
+        this.mdp = mdp;
+        this.Role = Role;
+    }
+
+    public void setRole(String Role) {
+        this.Role = Role;
+    }
+
+    public String getRole() {
+        return Role;
     }
 
    

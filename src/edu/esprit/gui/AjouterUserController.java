@@ -89,7 +89,7 @@ public class AjouterUserController implements Initializable {
             
             tfnom.getScene().setRoot(root);
         } catch (IOException ex) {
-            Logger.getLogger(AjouterUserController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.print(ex.getMessage());
         }
     }
     
