@@ -17,6 +17,7 @@ public class candidate {
   private String mdp;
   private String numTel;
   private String Adresse;
+  private String Role;
 
     public candidate(int id, int age, String nom, String prenom, String email, String mdp, String numTel, String Adresse) {
         this.id = id;
@@ -27,6 +28,50 @@ public class candidate {
         this.mdp = mdp;
         this.numTel = numTel;
         this.Adresse = Adresse;
+    }
+
+    public candidate(int id, int age, String nom, String prenom, String email, String mdp, String numTel, String Adresse, String Role) {
+        this.id = id;
+        this.age = age;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.mdp = mdp;
+        this.numTel = numTel;
+        this.Adresse = Adresse;
+        this.Role = Role;
+    }
+
+    public candidate(int age, String nom, String prenom, String email, String mdp, String numTel, String Adresse, String Role) {
+        this.age = age;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.mdp = mdp;
+        this.numTel = numTel;
+        this.Adresse = Adresse;
+        this.Role = Role;
+    }
+
+    public candidate(int age, String nom, String prenom, String email, String mdp, String numTel, String Adresse) {
+        this.age = age;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.mdp = mdp;
+        this.numTel = numTel;
+        this.Adresse = Adresse;
+    }
+
+    public candidate() {
+    }
+
+    public String getRole() {
+        return Role;
+    }
+
+    public void setRole(String Role) {
+        this.Role = Role;
     }
   
   

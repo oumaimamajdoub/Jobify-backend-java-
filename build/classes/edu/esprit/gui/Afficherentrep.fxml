@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="edu.esprit.gui.AfficherentrepController">
+    <children>
+      <Label layoutX="80.0" layoutY="58.0" prefHeight="21.0" prefWidth="44.0" text="nom" />
+      <Label layoutX="84.0" layoutY="109.0" text="email" />
+      <Label layoutX="85.0" layoutY="157.0" text="mdp" />
+      <Label layoutX="76.0" layoutY="211.0" prefHeight="21.0" prefWidth="80.0" text="numTel" />
+      <Label layoutX="74.0" layoutY="266.0" text="Adresse" />
+      <TextField fx:id="tfnom" layoutX="278.0" layoutY="53.0" />
+      <TextField fx:id="tfemail" layoutX="278.0" layoutY="104.0" />
+      <TextField fx:id="tfmdp" editable="false" layoutX="278.0" layoutY="152.0" />
+      <TextField fx:id="tfnumTel" editable="false" layoutX="278.0" layoutY="206.0" />
+      <TextField fx:id="tfAdresse" editable="false" layoutX="278.0" layoutY="261.0" />
+       </children>
+</AnchorPane>

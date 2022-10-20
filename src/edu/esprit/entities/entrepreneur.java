@@ -16,6 +16,7 @@ public class entrepreneur {
   private String mdp;
   private String numTel;
   private String Adresse;
+  private String Role;
 
     public entrepreneur(int id, String nom, String email, String mdp, String numTel, String Adresse) {
         this.id = id;
@@ -24,6 +25,37 @@ public class entrepreneur {
         this.mdp = mdp;
         this.numTel = numTel;
         this.Adresse = Adresse;
+    }
+
+    public entrepreneur(int id, String nom, String email, String mdp, String numTel, String Adresse, String Role) {
+        this.id = id;
+        this.nom = nom;
+        this.email = email;
+        this.mdp = mdp;
+        this.numTel = numTel;
+        this.Adresse = Adresse;
+        this.Role = Role;
+    }
+
+    public entrepreneur(String nom, String email, String mdp, String numTel, String Adresse) {
+        this.nom = nom;
+        this.email = email;
+        this.mdp = mdp;
+        this.numTel = numTel;
+        this.Adresse = Adresse;
+    }
+
+    public entrepreneur(String nom, String email, String mdp, String numTel, String Adresse, String Role) {
+        this.nom = nom;
+        this.email = email;
+        this.mdp = mdp;
+        this.numTel = numTel;
+        this.Adresse = Adresse;
+        this.Role = Role;
+    }
+
+    public entrepreneur() {
+        
     }
 
     public int getId() {
@@ -72,6 +104,14 @@ public class entrepreneur {
 
     public void setAdresse(String Adresse) {
         this.Adresse = Adresse;
+    }
+
+    public void setRole(String Role) {
+        this.Role = Role;
+    }
+
+    public String getRole() {
+        return Role;
     }
 
     @Override

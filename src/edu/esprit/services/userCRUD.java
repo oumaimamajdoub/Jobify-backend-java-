@@ -107,22 +107,22 @@ public class userCRUD {
         }
         return myList;
     }
-    /*
-    public void calculer_Salaire( fiche_de_paie fp1,int nbr){
+    
+    /**
+     *
+     * @param id
+     */
+    public void supprimerUser(int id){
+        
         try {
-            System.out.println("calculer la salaire ");
-            int salaire_Sans_Prime;
-            if (nbr<50){salaire_Sans_Prime=nbr*12;}
-            else{salaire_Sans_Prime=50*12+(nbr-50)*15;}
-            String rqt = " UPDATE fiche_de_paie SET `Salaire_init`=? WHERE ID_FP=?";
-            PreparedStatement pst = new MaConnexion().getCnx().prepareStatement(rqt);
-            pst.setInt(1,salaire_Sans_Prime);
-            pst.setInt(2, fp1.getID_FP());
-            }
-         catch (SQLException ex) {
+            String requete2 = "DELETE FROM user WHERE id =?";
+            PreparedStatement st = new MyConnection().getCnx().prepareStatement(requete2);
+            st.setInt(1, id);
+            st.executeUpdate();
+            System.out.println("user supprimée avec succès!");
+        } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
     }
-*/
 }
      

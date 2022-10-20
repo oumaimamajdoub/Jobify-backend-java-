@@ -37,6 +37,10 @@ public class admin {
         this.Role = Role;
     }
 
+    public admin(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public void setRole(String Role) {
         this.Role = Role;
     }

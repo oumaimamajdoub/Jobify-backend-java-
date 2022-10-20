@@ -6,7 +6,7 @@
 package edu.esprit.services;
 
 
-import edu.esprit.entities.User;
+
 import edu.esprit.entities.candidate;
 import edu.esprit.utils.MyConnection;
 import java.sql.PreparedStatement;
@@ -21,7 +21,7 @@ import java.util.List;
  * @author LENOVO
  */
 public class candidateCRUD {
-     public void ajoutercandidate(User fp){
+     public void ajoutercandidate(candidate fp){
         try {
             String requete1 = "INSERT INTO user (age,nom,prenom,email,mdp,numTel,Adresse,Role)"
                     + "VALUES (?,?,?,?,?,?,?,'candidate')";
@@ -60,7 +60,7 @@ public class candidateCRUD {
      * @param fp
      * @param fp1
      */
-    public void modifieradmin(int a, User fp){
+    public void modifieradmin(int a, candidate fp){
         
         try {
             String requete3 = " UPDATE `user` SET `age`=?,`nom`=?,`prenom`=?,`email`=?,`mdp`=?,`numTel`=?,`Adresse`=? WHERE id=?";
@@ -81,14 +81,14 @@ public class candidateCRUD {
         }
     }
     
-    public List<User> afficheradmin(){
-        List<User> myList = new ArrayList<User>();
+    public List<candidate> afficheradmin(){
+        List<candidate> myList = new ArrayList<candidate>();
         try {  
             String requete4 = "SELECT * FROM user";
             Statement st = new MyConnection().getCnx().createStatement();
             ResultSet rs = st.executeQuery(requete4);
             while(rs.next()){
-                User fp = new User();
+                candidate fp = new candidate();
                 fp.setId(rs.getInt(1));
                 fp.setAge(rs.getInt(2));
                 fp.setNom(rs.getString("nom"));
@@ -97,7 +97,7 @@ public class candidateCRUD {
                 fp.setMdp(rs.getString("mdp"));
                 fp.setNumTel(rs.getString("numTel"));
                 fp.setAdresse(rs.getString("Adresse"));
-                fp.setEtat(rs.getString("Role"));
+                fp.setRole(rs.getString("Role"));
                 myList.add(fp);
                 
             }
