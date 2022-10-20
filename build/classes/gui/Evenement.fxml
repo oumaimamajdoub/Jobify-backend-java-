@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="865.0" prefWidth="1281.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.EvenementController">
+   <children>
+      <TabPane layoutX="10.0" layoutY="22.0" prefHeight="828.0" prefWidth="1258.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Evenement">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="651.0" prefWidth="1118.0">
+                     <children>
+                        <Button fx:id="b_ajouter_event" layoutX="982.0" layoutY="36.0" mnemonicParsing="false" onAction="#ajouter_event" prefHeight="48.0" prefWidth="112.0" text="Ajouter" />
+                        <Label layoutX="22.0" layoutY="27.0" prefWidth="101.0" text="Nom event :" />
+                        <TableView fx:id="Evenenemt_table" layoutX="27.0" layoutY="307.0" onMouseClicked="#event_select" prefHeight="448.0" prefWidth="1226.0">
+                          <columns>
+                            <TableColumn fx:id="a_idevent" prefWidth="93.00003051757812" text="Id " />
+                            <TableColumn fx:id="a_nomevent" minWidth="0.0" prefWidth="102.99996948242188" text="Nom" />
+                              <TableColumn fx:id="a_programmevent" prefWidth="138.0" text="Programme" />
+                              <TableColumn fx:id="a_lieuevent" prefWidth="116.0" text="Lieu" />
+                              <TableColumn fx:id="a_numcontacts" prefWidth="158.0" text="Num contacts" />
+                              <TableColumn fx:id="a_disponibiliteevent" prefWidth="165.0" text="Disponibilite" />
+                              <TableColumn fx:id="a_datedebutevent" prefWidth="140.0" text="Date debeut" />
+                              <TableColumn fx:id="a_nomevent7" minWidth="0.0" prefWidth="0.0" text="Nom" />
+                              <TableColumn fx:id="a_datefinevent" prefWidth="137.0" text="Date fin" />
+                              <TableColumn fx:id="a_organisateurevent" prefWidth="174.0" text="Organisateur" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="982.0" layoutY="129.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="112.0" text="Modifier" />
+                        <Button layoutX="983.0" layoutY="219.0" mnemonicParsing="false" onMouseClicked="#event_supp" prefHeight="48.0" prefWidth="112.0" text="Supprimer" />
+                        <Label layoutX="420.0" layoutY="130.0" text="Date debut evenet :" />
+                        <Label layoutX="420.0" layoutY="196.0" text="Date fin event :" />
+                        <Label layoutX="17.0" layoutY="121.0" text="Organisateur event :" />
+                        <Label layoutX="14.0" layoutY="172.0" text="Lieu event :" />
+                        <Label layoutX="420.0" layoutY="79.0" text="Disponibilite event :" />
+                        <Label layoutX="16.0" layoutY="71.0" text="Programme event :" />
+                        <Label layoutX="17.0" layoutY="224.0" text="Num contacts :" />
+                        <DatePicker fx:id="dateend" layoutX="573.0" layoutY="201.0" />
+                        <DatePicker fx:id="date_db" layoutX="573.0" layoutY="131.0" />
+                        <TextField fx:id="txt_nom_event" layoutX="149.0" layoutY="14.0" />
+                        <TextField fx:id="txt_programe_event" layoutX="149.0" layoutY="69.0" />
+                        <TextField fx:id="txt_organisateur" layoutX="161.0" layoutY="118.0" />
+                        <TextField fx:id="txt_lieu" layoutX="149.0" layoutY="164.0" />
+                        <TextField fx:id="txt_num" layoutX="149.0" layoutY="214.0" />
+                        <TextField fx:id="txt_dispo" layoutX="570.0" layoutY="69.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Participant">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table_participant" layoutX="258.0" layoutY="317.0" prefHeight="439.0" prefWidth="593.0">
+                          <columns>
+                            <TableColumn fx:id="Id_participant" prefWidth="143.0" text="Id_participant" />
+                            <TableColumn minWidth="0.0" prefWidth="53.0" />
+                              <TableColumn fx:id="Id_evenement" prefWidth="172.0" text="Id_evenement" />
+                              <TableColumn fx:id="id_user" prefWidth="706.0" text="Id user" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="62.0" layoutY="34.0" text="Id_Participant :" />
+                        <Label layoutX="61.0" layoutY="111.0" text="Id_Evenement :" />
+                        <Label layoutX="73.0" layoutY="190.0" text="Id_User :" />
+                        <Button fx:id="b_ajotuer_participant" layoutX="1029.0" layoutY="17.0" mnemonicParsing="false" onAction="#ajouter_participant" prefHeight="52.0" prefWidth="160.0" text="Ajouter" />
+                        <Button layoutX="1029.0" layoutY="93.0" mnemonicParsing="false" onAction="#modifer_participant" prefHeight="55.0" prefWidth="160.0" text="Modifer" />
+                        <Button layoutX="1034.0" layoutY="178.0" mnemonicParsing="false" onMouseClicked="#supprimer_participant" prefHeight="57.0" prefWidth="155.0" text="Supprimer" />
+                        <TextField fx:id="txt_id_pr" layoutX="240.0" layoutY="39.0" />
+                        <TextField fx:id="txt_id_ev" layoutX="240.0" layoutY="116.0" />
+                        <TextField fx:id="txt_id_user" layoutX="219.0" layoutY="195.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
