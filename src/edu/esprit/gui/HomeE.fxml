@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.HomeEController">
+   <children>
+      <TableView fx:id="tab" layoutX="35.0" layoutY="26.0" prefHeight="303.0" prefWidth="523.0">
+        <columns>
+          <TableColumn fx:id="cnome" prefWidth="75.0" text="C1" />
+          <TableColumn fx:id="cnumtele" prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="cemaile" prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="cadde" prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="cmdpe" prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
