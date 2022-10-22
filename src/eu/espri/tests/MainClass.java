@@ -34,6 +34,7 @@ public class MainClass {
        //pc.modifierUser(1,u2);
        //cc.ajoutercandidate(u3);
        //pcd.ajouterentrepreneur(u3);
+       myList=(ArrayList<User>) pc.afficherUser();
     }
     
 }

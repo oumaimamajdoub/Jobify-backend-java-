@@ -60,7 +60,7 @@ public class candidateCRUD {
      * @param fp
      * @param fp1
      */
-    public void modifieradmin(int a, candidate fp){
+    public void modifiercandidate(int a, candidate fp){
         
         try {
             String requete3 = " UPDATE `user` SET `age`=?,`nom`=?,`prenom`=?,`email`=?,`mdp`=?,`numTel`=?,`Adresse`=? WHERE id=?";
@@ -81,7 +81,7 @@ public class candidateCRUD {
         }
     }
     
-    public List<candidate> afficheradmin(){
+    public List<candidate> affichercandidate(){
         List<candidate> myList = new ArrayList<candidate>();
         try {  
             String requete4 = "SELECT * FROM user";
