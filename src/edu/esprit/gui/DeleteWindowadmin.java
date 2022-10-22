@@ -21,14 +21,14 @@ import javafx.stage.Stage;
  * @author LENOVO
  */
 public class DeleteWindowadmin extends Application {
-    
+
     @Override
     public void start(Stage primaryStage) throws IOException {
-       Parent root =FXMLLoader.load(getClass().getResource("supprimeradmin.fxml"));
         
-        
+        Parent root = FXMLLoader.load(getClass().getResource("supprimeradmin.fxml"));
+
         Scene scene = new Scene(root);
-        
+
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();

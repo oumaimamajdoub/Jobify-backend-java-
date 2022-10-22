@@ -58,22 +58,22 @@ public class AjouterentrepController implements Initializable {
         String mdp = tfmdp.getText();
         String numTel = tfnumTel.getText();
         String Adresse = tfAdresse.getText();
-
+        //(String nom, String email, String mdp, String numTel, String Adresse)
         entrepreneur e= new entrepreneur( nom, email, mdp, numTel, Adresse);
         entrepreneurCRUD ec = new entrepreneurCRUD();
-        ec.ajouterentrep(e);
+        ec.ajouterentrepreneur(e);
 
         FXMLLoader loader
-                = new FXMLLoader(getClass().getResource("Afficherentrep.fxml"));
+                = new FXMLLoader(getClass().getResource("AfficherE.fxml"));
         try {
             Parent root = loader.load();
 
-            AfficherentrepController acc = loader.getController();
-            aec.setTfnom(e.getNom());
-            aec.setTfemail(e.getEmail());
-            aec.setTfmdp(e.getMdp());
-            aec.setTfnumTel(e.getNumTel());
-            aec.setTfAdresse(e.getAdresse());
+            AfficherEController acc = loader.getController();
+            acc.setTfnom(e.getNom());
+            acc.setTfemail(e.getEmail());
+            acc.setTfmdp(e.getMdp());
+            acc.setTfnumTel(e.getNumTel());
+            acc.setTfAdresse(e.getAdresse());
 
             tfnom.getScene().setRoot(root);
 

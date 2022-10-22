@@ -21,13 +21,13 @@ import javafx.stage.Stage;
  * @author LENOVO
  */
 public class DeleteWindow extends Application {
-    
+
     @Override
     public void start(Stage primaryStage) throws IOException {
-       
-          Parent root =FXMLLoader.load(getClass().getResource("supprimerUser.fxml"));
+
+        Parent root = FXMLLoader.load(getClass().getResource("supprimerUser.fxml"));
         Scene scene = new Scene(root);
-        
+
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();

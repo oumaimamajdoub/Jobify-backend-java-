@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="edu.esprit.gui.AfficherentrepController">
-    <children>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.AfficherEController">
+     <children>
       <Label layoutX="80.0" layoutY="58.0" prefHeight="21.0" prefWidth="44.0" text="nom" />
       <Label layoutX="84.0" layoutY="109.0" text="email" />
       <Label layoutX="85.0" layoutY="157.0" text="mdp" />
