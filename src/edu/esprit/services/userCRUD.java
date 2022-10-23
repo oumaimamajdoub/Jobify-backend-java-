@@ -53,6 +53,18 @@ public class userCRUD {
             System.err.println(ex.getMessage());
         }
     }
+    public void supprimeruserByEmail(String email){
+        
+        try {
+            String requete2 = "DELETE FROM user WHERE email =?";
+            PreparedStatement st = new MyConnection().getCnx().prepareStatement(requete2);
+            st.setString(1, email);
+            st.executeUpdate();
+            System.out.println("user supprimée avec succès!");
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
     
     /**
      *

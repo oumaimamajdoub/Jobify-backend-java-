@@ -14,11 +14,16 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseDragEvent;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -39,6 +44,11 @@ public class HomeEController implements Initializable {
     private TableColumn<entrepreneur, String> cmdpe;
     @FXML
     private TableColumn<entrepreneur, String> cnumtele;
+    private TextField test;
+    @FXML
+    private Button butmodif;
+    @FXML
+    private Button butmodif1;
 
     /**
      * Initializes the controller class.
@@ -64,5 +74,30 @@ public class HomeEController implements Initializable {
 
         tab.setItems(oblist);
     }
+    
+
+    entrepreneur ee=new entrepreneur();
+    @FXML
+    private void getdata(MouseEvent event) {
+        int index = tab.getSelectionModel().getSelectedIndex();
+        ee.setEmail(cemaile.getCellData(index));
+        ee.setAdresse(cadde.getCellData(index));
+        ee.setNumTel(cnumtele.getCellData(index));
+        ee.setMdp(cmdpe.getCellData(index));
+        ee.setNom(cnome.getCellData(index));
+    }
+
+    @FXML
+    private void tosuppE(ActionEvent event) {
+        us.supprimerentrepreneurByEmail(ee.getEmail());
+        tab.getItems().clear();
+        loadTableentrepreneur();
+    }
+
+    @FXML
+    private void tomodif(ActionEvent event) {
+    }
+
+
     
 }

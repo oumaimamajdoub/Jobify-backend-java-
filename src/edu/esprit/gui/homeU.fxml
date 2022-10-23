@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.HomeUController">
    <children>
-      <TableView fx:id="tab" layoutX="24.0" layoutY="32.0" prefHeight="386.0" prefWidth="740.0">
+      <TableView fx:id="tab" layoutX="24.0" layoutY="32.0" onMouseClicked="#getdatauser" prefHeight="386.0" prefWidth="740.0">
         <columns>
           <TableColumn fx:id="cnom" prefWidth="75.0" text="C1" />
           <TableColumn fx:id="cprenom" prefWidth="75.0" text="C2" />
@@ -18,5 +19,6 @@
             <TableColumn fx:id="crole" prefWidth="75.0" text="C1" />
         </columns>
       </TableView>
+      <Button layoutX="476.0" layoutY="492.0" mnemonicParsing="false" onAction="#tosuppuser" text="supp" />
    </children>
 </AnchorPane>

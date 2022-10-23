@@ -14,11 +14,13 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -69,5 +71,25 @@ public class HomeCController implements Initializable {
         caddc.setCellValueFactory(new PropertyValueFactory<>("Adresse"));
 
         tab.setItems(oblist);
+    }
+    candidate ca =new candidate();
+    @FXML
+    private void getdata(MouseEvent event) {
+        int index = tab.getSelectionModel().getSelectedIndex();
+        ca.setEmail(cemailc.getCellData(index));
+        ca.setAdresse(caddc.getCellData(index));
+        ca.setNumTel(cnumtelc.getCellData(index));
+        ca.setAge(cagec.getCellData(index));
+        ca.setMdp(cmdpc.getCellData(index));
+        ca.setNom(cnomc.getCellData(index));
+        ca.setPrenom(cprenomc.getCellData(index));
+    }
+
+    @FXML
+    private void suppC(ActionEvent event) {
+        us.supprimercandidateByEmail(ca.getEmail());
+        tab.getItems().clear();
+        loadTableCandidate();
+        
     }
 }

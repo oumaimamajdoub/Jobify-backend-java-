@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -19,6 +20,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -75,4 +77,27 @@ public class HomeUController implements Initializable {
 
         tab.setItems(oblist);
     }
+    User uu=new User();
+
+    @FXML
+    private void getdatauser(MouseEvent event) {
+        int index = tab.getSelectionModel().getSelectedIndex();
+        uu.setEmail(cemail.getCellData(index));
+        uu.setAdresse(cadd.getCellData(index));
+        uu.setNumTel(cnumtel.getCellData(index));
+        uu.setMdp(cmdp.getCellData(index));
+        uu.setNom(cnom.getCellData(index));
+        uu.setPrenom(cprenom.getCellData(index));
+        uu.setAge(cage.getCellData(index));
+        uu.setRole(crole.getCellData(index));
+        
+    }
+
+    @FXML
+    private void tosuppuser(ActionEvent event) {
+        us.supprimeruserByEmail(uu.getEmail());
+        tab.getItems().clear();
+        loadTableUser();
+    }
+
 }

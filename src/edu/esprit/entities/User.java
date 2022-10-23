@@ -51,6 +51,10 @@ public class User {
         this.Adresse = Adresse;
     }
 
+    public void setRole(String Role) {
+        this.Role = Role;
+    }
+
     public User() {
     }
 

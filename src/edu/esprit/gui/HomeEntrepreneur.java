@@ -26,6 +26,7 @@ public class HomeEntrepreneur extends Application {
     public void start(Stage primaryStage) throws IOException {
         Parent root =FXMLLoader.load(getClass().getResource("HomeE.fxml"));
         
+
         Scene scene = new Scene(root);
         
         primaryStage.setTitle("Hello World!");
