@@ -24,7 +24,7 @@ public class MainProgGUI extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader (getClass().getResource("../gui/AjoutUser.fxml"));
+        FXMLLoader loader = new FXMLLoader (getClass().getResource("/edu/esprit/gui/ContratFXML.fxml"));
         Parent root=loader.load();
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);

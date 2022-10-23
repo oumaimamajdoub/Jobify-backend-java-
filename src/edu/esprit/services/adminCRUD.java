@@ -9,6 +9,7 @@ package edu.esprit.services;
 import edu.esprit.entities.User;
 import edu.esprit.entities.admin;
 import edu.esprit.utils.MyConnection;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,11 +22,16 @@ import java.util.List;
  * @author LENOVO
  */
 public class adminCRUD {
+    Connection Cnx;
+    public adminCRUD(){
+        Cnx=MyConnection.getInstance().getCnx();
+    }
+    
      public void ajouteradmin(admin fp){
         try {
             String requete1 = "INSERT INTO user (email,mdp,Role)"
                     + "VALUES (?,?,'admin')";
-            PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete1);
+            PreparedStatement pst = Cnx.prepareStatement(requete1);
             
             pst.setString(1, fp.getEmail());
             pst.setString(2, fp.getMdp());
@@ -42,7 +48,7 @@ public class adminCRUD {
         
         try {
             String requete2 = "DELETE FROM user WHERE id =?";
-            PreparedStatement st = new MyConnection().getCnx().prepareStatement(requete2);
+            PreparedStatement st = Cnx.prepareStatement(requete2);
             st.setInt(1, id);
             st.executeUpdate();
             System.out.println("Admin supprimée avec succès!");
@@ -60,7 +66,7 @@ public class adminCRUD {
         
         try {
             String requete3 = " UPDATE `user` SET `age`=?,`nom`=?,`prenom`=?,`email`=?,`mdp`=?,`numTel`=?,`Adresse`=? WHERE id=?";
-            PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete3);
+            PreparedStatement pst = Cnx.prepareStatement(requete3);
             
             pst.setString(1, fp.getEmail());
             pst.setString(2, fp.getMdp());
@@ -77,7 +83,7 @@ public class adminCRUD {
         List<admin> myList = new ArrayList<admin>();
         try {  
             String requete4 = "SELECT * FROM user";
-            Statement st = new MyConnection().getCnx().createStatement();
+            Statement st = Cnx.createStatement();
             ResultSet rs = st.executeQuery(requete4);
             while(rs.next()){
                 admin fp = new admin();

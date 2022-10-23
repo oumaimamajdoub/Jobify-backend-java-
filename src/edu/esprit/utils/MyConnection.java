@@ -16,34 +16,31 @@ import java.util.logging.Logger;
  * @author LENOVO
  */
 public class MyConnection {
-    public String url="jdbc:mysql://localhost:3306/testdb";
+  
+    public String url="jdbc:mysql://localhost:3306/gestionpost";
     public String login="root";
     public String pwd="";
-    Connection cnx;
-    public MyConnection() {
-        try {
-          cnx=(Connection) DriverManager.getConnection(url, login, pwd);
-          System.out.println("Connexion etablie!");
-        } catch (SQLException ex) {
-           System.err.println(ex.getMessage());       }
-    }
+    java.sql.Connection cnx;
+    static MyConnection instance;
+    private MyConnection()
+    {
+           try {
+             cnx=  DriverManager.getConnection(url, login, pwd);
 
-    public void setCnx(Connection cnx) {
-        this.cnx = cnx;
-    }
+             System.out.println("Connexion etablie !");
+           } catch (SQLException ex) {
 
-    public Connection getCnx() {
+               System.err.println(ex.getMessage());
+           }   
+
+    }
+    public java.sql.Connection getCnx (){
         return cnx;
     }
 
-    
-    
-
-    public static class getInstance extends MyConnection {
-
-        public getInstance() {
-        }
+    public static MyConnection getInstance(){
+        if (instance == null)
+        { instance = new MyConnection();}
+        return instance ;
     }
-
-    
 }

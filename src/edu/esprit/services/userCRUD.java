@@ -7,6 +7,7 @@ package edu.esprit.services;
 
 import edu.esprit.entities.User;
 import edu.esprit.utils.MyConnection;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,11 +20,15 @@ import java.util.List;
  * @author LENOVO
  */
 public class userCRUD {
+    Connection Cnx;
+    public userCRUD(){
+        Cnx=MyConnection.getInstance().getCnx();
+    }
     public void ajouteruser(User fp){
         try {
             String requete1 = "INSERT INTO user (age,nom,prenom,email,mdp,numTel,Adresse,Role)"
                     + "VALUES (?,?,?,?,?,?,?,?)";
-            PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete1);
+            PreparedStatement pst = Cnx.prepareStatement(requete1);
             pst.setInt(1, fp.getAge());
             pst.setString(2, fp.getNom());
             pst.setString(3, fp.getPrenom());
@@ -45,7 +50,7 @@ public class userCRUD {
         
         try {
             String requete2 = "DELETE FROM user WHERE id =?";
-            PreparedStatement st = new MyConnection().getCnx().prepareStatement(requete2);
+            PreparedStatement st = Cnx.prepareStatement(requete2);
             st.setInt(1, id);
             st.executeUpdate();
             System.out.println("user supprimée avec succès!");
@@ -63,7 +68,7 @@ public class userCRUD {
         
         try {
             String requete3 = " UPDATE `user` SET `age`=?,`nom`=?,`prenom`=?,`email`=?,`mdp`=?,`numTel`=?,`Adresse`=?,`Role`=? WHERE id=?";
-            PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete3);
+            PreparedStatement pst = Cnx.prepareStatement(requete3);
             pst.setInt(1, fp.getAge());
             pst.setString(2, fp.getNom());
             pst.setString(3, fp.getPrenom());
@@ -85,7 +90,7 @@ public class userCRUD {
         List<User> myList = new ArrayList<User>();
         try {  
             String requete4 = "SELECT * FROM user";
-            Statement st = new MyConnection().getCnx().createStatement();
+            Statement st = Cnx.createStatement();
             ResultSet rs = st.executeQuery(requete4);
             while(rs.next()){
                 User fp = new User();
@@ -115,7 +120,7 @@ public class userCRUD {
             if (nbr<50){salaire_Sans_Prime=nbr*12;}
             else{salaire_Sans_Prime=50*12+(nbr-50)*15;}
             String rqt = " UPDATE fiche_de_paie SET `Salaire_init`=? WHERE ID_FP=?";
-            PreparedStatement pst = new MaConnexion().getCnx().prepareStatement(rqt);
+            PreparedStatement pst = Cnx.prepareStatement(rqt);
             pst.setInt(1,salaire_Sans_Prime);
             pst.setInt(2, fp1.getID_FP());
             }

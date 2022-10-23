@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class MainClass {
     public static void main(String[] args) {
-       MyConnection mc =new MyConnection.getInstance();
+       
        User u1 = new User(56,"mohggggame","hsan","@esprit","mdp","8577787","kdggggjd","uggggser");
        User u2 = new User(56,"hsane","hsmohan","wiwwt","mdwiiwp","7","kjd","lasmarRRRr");
        User u3 = new User(56,"hsane","hsmohan","wiwwt","mdwiiwp","7","kjd");

@@ -8,6 +8,7 @@ package edu.esprit.services;
 import edu.esprit.entities.User;
 import edu.esprit.entities.entrepreneur;
 import edu.esprit.utils.MyConnection;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,11 +23,15 @@ import java.util.logging.Logger;
  * @author LENOVO
  */
 public class entrepreneurCRUD {
+    Connection Cnx;
+    public entrepreneurCRUD(){
+        Cnx=MyConnection.getInstance().getCnx();
+    }
      public void ajouterentrepreneur(User fp){
         try {
             String requete1 = "INSERT INTO user (age,nom,prenom,email,mdp,numTel,Adresse,Role)"
                     + "VALUES (?,?,?,?,?,?,?,'entrepreneur')";
-            PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete1);
+            PreparedStatement pst = Cnx.prepareStatement(requete1);
             pst.setInt(1, fp.getAge());
             pst.setString(2, fp.getNom());
             pst.setString(3, fp.getPrenom());
@@ -47,7 +52,7 @@ public class entrepreneurCRUD {
         
         try {
             String requete2 = "DELETE FROM user WHERE id =?";
-            PreparedStatement st = new MyConnection().getCnx().prepareStatement(requete2);
+            PreparedStatement st = Cnx.prepareStatement(requete2);
             st.setInt(1, id);
             st.executeUpdate();
             System.out.println("entrepreneur supprimée avec succès!");
@@ -65,7 +70,7 @@ public class entrepreneurCRUD {
         
         try {
             String requete3 = " UPDATE `user` SET `age`=?,`nom`=?,`prenom`=?,`email`=?,`mdp`=?,`numTel`=?,`Adresse`=? WHERE id=?";
-            PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete3);
+            PreparedStatement pst =  Cnx.prepareStatement(requete3);
             pst.setInt(1, fp.getAge());
             pst.setString(2, fp.getNom());
             pst.setString(3, fp.getPrenom());
@@ -86,7 +91,7 @@ public class entrepreneurCRUD {
         List<User> myList = new ArrayList<User>();
         try {  
             String requete4 = "SELECT * FROM user";
-            Statement st = new MyConnection().getCnx().createStatement();
+            Statement st = Cnx.createStatement();
             ResultSet rs = st.executeQuery(requete4);
             while(rs.next()){
                 User fp = new User();
