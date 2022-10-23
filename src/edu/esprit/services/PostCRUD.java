@@ -9,7 +9,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import edu.esprit.utils.MyConnection;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 
@@ -85,6 +87,33 @@ public class PostCRUD implements IService<Post> {
         try {
             
             String requet2="SELECT * FROM post";
+            Statement st = Cnx.prepareStatement(requet2);              
+            ResultSet rs = st.executeQuery(requet2);
+            while(rs.next()){
+                Post P = new Post();
+                P.setId(rs.getInt(1));
+                P.setDateDeCreation(rs.getDate("dateDeCreation"));
+                P.setDateExpiration(rs.getDate("dateExpiration"));
+                P.setDescription(rs.getString("description"));
+                P.setTitre(rs.getString("titre"));
+                P.setSalaire(rs.getInt("salaire"));
+                myList.add(P);
+            }
+               
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    
+        return myList;
+    }
+    public List<Post> triParSalaire(){
+        return afficher().stream().sorted(Comparator.comparing(Post::getSalaire)).collect(Collectors.toList());
+    }
+    public List<Post> triParTitre(){
+         List<Post>myList = new ArrayList<>();
+        try {
+            
+            String requet2="SELECT * FROM post order by titre";
             Statement st = Cnx.prepareStatement(requet2);              
             ResultSet rs = st.executeQuery(requet2);
             while(rs.next()){

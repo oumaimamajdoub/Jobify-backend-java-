@@ -3,17 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/services/userCRUD.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/entities/User.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/services/adminCRUD.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/gui/FirstWindow.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/eu/espri/tests/myList.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/services/candidateCRUD.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/gui/AjouterUser.fxml</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/utils/MyConnection.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/services/entrepreneurCRUD.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/eu/espri/tests/MainClass.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/gui/AjouterUserController.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/entities/Application.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/services/PostCRUD.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/eu/espri/tests/MainProgGUI.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/services/candidateCRUD.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/gui/ContratFXMLController.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/services/adminCRUD.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/services/entrepreneurCRUD.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/gui/DocumentFXMLController.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/entities/Post.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/services/ContratCRUD.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/utils/MyDB.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/eu/espri/tests/myList.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/gui/documentFXML.fxml</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/entities/Contrat.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/services/DocumentCRUD.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/gui/PostFXMLController.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/services/ApplicationCRUD.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/gui/postFXML.fxml</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/utils/MyConnection.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/services/userCRUD.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/gui/ContratFXML.fxml</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/entities/Document.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/eu/espri/tests/MainClass.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/services/IService.java</file>
         </group>
     </open-files>
 </project-private>

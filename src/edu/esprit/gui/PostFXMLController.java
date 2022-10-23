@@ -24,6 +24,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import edu.esprit.services.PostCRUD;
+import javafx.geometry.Point2D;
+import javafx.scene.control.Alert;
 
 /**
  * FXML Controller class
@@ -64,28 +66,44 @@ public class PostFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        refresh();
+        refresh(pc.afficher());
         
     }    
-
-    @FXML
-    private void ajouterPost(ActionEvent event) {
-        Post p=new Post();
-        p.setTitre(tftitre.getText());
-        p.setDescription(tadescription.getText());
-        
-        p.setDateDeCreation(Date.valueOf(dpcreation.getValue()));
-        p.setDateExpiration(Date.valueOf(dpexpiration.getValue()));
-        p.setSalaire(Integer.valueOf(tfsalaire.getText()));
-        pc.ajouter(p);
-        refresh();
-        
+    public String controleDeSaisie(){
+        String erreur="";
+        if(tftitre.getText().trim().isEmpty()){
+            erreur+="-Remplire le champ titre\n";
+        }
+        if(tfsalaire.getText().trim().isEmpty()){
+            erreur+="-Remplire le champ salaire\n";
+        }
+        if(tadescription.getText().trim().isEmpty()){
+            erreur+="-Remplire le champ description\n";
+        }
+        if(dpcreation.getValue()==null){
+            erreur+="-Remplire le champ date de creation\n";
+        }
+        if(dpexpiration.getValue()==null){
+            erreur+="-Remplire le champ date d'expiration\n";
+        }
+        if(dpexpiration.getValue().isBefore(dpcreation.getValue())){
+            erreur+="-Date incorrect\n";
+        }
+        if(!tfsalaire.getText().trim().matches("[0-9]+")){
+            erreur+="-Inserer correct salaire\n";
+        }
+        return erreur;
     }
 
     @FXML
-    private void modifierPost(ActionEvent event) {
-        Post pselected=tablepost.getSelectionModel().getSelectedItem();
-        if(pselected!=null){
+    private void ajouterPost(ActionEvent event) {
+        if(controleDeSaisie().length()>0){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur d'ajout d'une post");
+            alert.setContentText(controleDeSaisie());
+            alert.showAndWait();
+        }
+        else{
             Post p=new Post();
             p.setTitre(tftitre.getText());
             p.setDescription(tadescription.getText());
@@ -93,10 +111,37 @@ public class PostFXMLController implements Initializable {
             p.setDateDeCreation(Date.valueOf(dpcreation.getValue()));
             p.setDateExpiration(Date.valueOf(dpexpiration.getValue()));
             p.setSalaire(Integer.valueOf(tfsalaire.getText()));
-            p.setId(pselected.getId());
-            pc.modifier(p);
-            refresh();
+            pc.ajouter(p);
+            refresh(pc.afficher());
         }
+        
+        
+    }
+
+    @FXML
+    private void modifierPost(ActionEvent event) {
+        if(controleDeSaisie().length()>0){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur modification d'une post");
+            alert.setContentText(controleDeSaisie());
+            alert.showAndWait();
+        }
+        else{
+            Post pselected=tablepost.getSelectionModel().getSelectedItem();
+            if(pselected!=null){
+                Post p=new Post();
+                p.setTitre(tftitre.getText());
+                p.setDescription(tadescription.getText());
+
+                p.setDateDeCreation(Date.valueOf(dpcreation.getValue()));
+                p.setDateExpiration(Date.valueOf(dpexpiration.getValue()));
+                p.setSalaire(Integer.valueOf(tfsalaire.getText()));
+                p.setId(pselected.getId());
+                pc.modifier(p);
+                refresh(pc.afficher());
+            }
+        }
+        
         
     }
 
@@ -105,20 +150,30 @@ public class PostFXMLController implements Initializable {
         Post p=tablepost.getSelectionModel().getSelectedItem();
         if(p!=null){
             pc.supprimer(p.getId());
-            refresh();
+            refresh(pc.afficher());
         }
         
         
     }
-    public void refresh(){
+    public void refresh(List<Post> posts){
         data.clear();
-        data=FXCollections.observableArrayList(pc.afficher());
+        data=FXCollections.observableArrayList(posts);
         tctitre.setCellValueFactory(new PropertyValueFactory<>("titre"));
         tcdescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         tcdatecreation.setCellValueFactory(new PropertyValueFactory<>("dateDeCreation"));
         tcdateexpiration.setCellValueFactory(new PropertyValueFactory<>("dateExpiration"));
         tcsalaire.setCellValueFactory(new PropertyValueFactory<>("salaire"));
         tablepost.setItems(data);
+    }
+
+    @FXML
+    private void triparsalaire(ActionEvent event) {
+        refresh(pc.triParSalaire());
+    }
+
+    @FXML
+    private void tripartitre(ActionEvent event) {
+        refresh(pc.triParTitre());
     }
     
 }
