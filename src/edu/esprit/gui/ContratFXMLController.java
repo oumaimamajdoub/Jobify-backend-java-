@@ -54,6 +54,10 @@ public class ContratFXMLController implements Initializable {
     private DatePicker dpDebut;
     @FXML
     private DatePicker dpFin;
+    @FXML
+    private TableColumn<Contrat, String> tctitre;
+    @FXML
+    private TextField tftitre;
 
     /**
      * Initializes the controller class.
@@ -71,6 +75,7 @@ public class ContratFXMLController implements Initializable {
         c.setDateDebut(Date.valueOf(dpDebut.getValue()));
         c.setDateFin(Date.valueOf(dpFin.getValue()));
         c.setSalaire(Integer.valueOf(tfSalaire.getText()));
+        c.setTitre(tftitre.getText());
         pc.ajouter(c);
         refresh();
         
@@ -82,7 +87,7 @@ public class ContratFXMLController implements Initializable {
         if(selected!=null){
             Contrat c=new Contrat();
             c.setType(tfType.getText());
-           
+           c.setTitre(tftitre.getText());
 
             c.setDateDebut(Date.valueOf(dpDebut.getValue()));
             c.setDateFin(Date.valueOf(dpFin.getValue()));
@@ -114,6 +119,7 @@ public class ContratFXMLController implements Initializable {
         tcDateDebut.setCellValueFactory(new PropertyValueFactory<>("dateDebut"));
         tcDateFin.setCellValueFactory(new PropertyValueFactory<>("dateFin"));
         tcSalaire.setCellValueFactory(new PropertyValueFactory<>("salaire"));
+        tctitre.setCellValueFactory(new PropertyValueFactory<>("titre"));
         tableContrat.setItems(data);
     }
     

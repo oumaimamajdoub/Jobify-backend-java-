@@ -18,29 +18,33 @@ public class Contrat {
      private Date DateDebut;
      private Date DateFin;
      private int salaire;
-
+     private String titre;
     public Contrat() {
     }
 
     public Contrat(int id) {
         this.id = id;
     }
-    
 
-    public Contrat(int id, String type, Date DateDebut, Date DateFin, int salaire) {
+    public Contrat(int id, String type, Date DateDebut, Date DateFin, int salaire, String titre) {
         this.id = id;
         this.type = type;
         this.DateDebut = DateDebut;
         this.DateFin = DateFin;
         this.salaire = salaire;
+        this.titre = titre;
     }
 
-    public Contrat(String type, Date DateDebut, Date DateFin, int salaire) {
+    public Contrat(String type, Date DateDebut, Date DateFin, int salaire, String titre) {
         this.type = type;
         this.DateDebut = DateDebut;
         this.DateFin = DateFin;
         this.salaire = salaire;
+        this.titre = titre;
     }
+    
+
+    
 
     public int getId() {
         return id;
@@ -82,10 +86,20 @@ public class Contrat {
         this.salaire = salaire;
     }
 
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
     @Override
     public String toString() {
-        return "Contrat{" + "id=" + id + ", type=" + type + ", DateDebut=" + DateDebut + ", DateFin=" + DateFin + ", salaire=" + salaire + '}'+"\n";
+        return "Contrat{" + "id=" + id + ", type=" + type + ", DateDebut=" + DateDebut + ", DateFin=" + DateFin + ", salaire=" + salaire + ", titre=" + titre + '}';
     }
+
+    
 
     @Override
     public int hashCode() {
