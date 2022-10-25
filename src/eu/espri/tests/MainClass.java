@@ -24,6 +24,7 @@ public class MainClass {
        User u1 = new User(56,"mohggggame","hsan","@esprit","mdp","8577787","kdggggjd","uggggser");
        User u2 = new User(56,"hsane","hsmohan","wiwwt","mdwiiwp","7","kjd","lasmarRRRr");
        User u3 = new User(56,"hsane","hsmohan","wiwwt","mdwiiwp","7","kjd");
+       admin ad = new admin("mail","mdp");
        ArrayList<User> myList = new ArrayList<User>();
        entrepreneurCRUD pcd= new entrepreneurCRUD();
        userCRUD pc = new userCRUD();
@@ -34,7 +35,11 @@ public class MainClass {
        //pc.modifierUser(1,u2);
        //cc.ajoutercandidate(u3);
        //pcd.ajouterentrepreneur(u3);
-       myList=(ArrayList<User>) pc.afficherUser();
+       //myList=(ArrayList<User>) pc.afficherUser();
+       //pc.modifierUser(36, u2);
+       //ac.modifieradmin("String", ad);
+       entrepreneur e = new entrepreneur("hsane","hsmohan","wiwwt","mdwiiwp","7");
+       pcd.modifierentrepreneur("1", e);
     }
     
 }

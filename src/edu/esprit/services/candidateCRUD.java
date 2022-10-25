@@ -72,10 +72,10 @@ public class candidateCRUD {
      * @param fp
      * @param fp1
      */
-    public void modifiercandidate(int a, candidate fp){
+    public void modifiercandidate(String a, candidate fp){
         
         try {
-            String requete3 = " UPDATE `user` SET `age`=?,`nom`=?,`prenom`=?,`email`=?,`mdp`=?,`numTel`=?,`Adresse`=? WHERE id=?";
+            String requete3 = " UPDATE `user` SET `age`=?,`nom`=?,`prenom`=?,`email`=?,`mdp`=?,`numTel`=?,`Adresse`=? WHERE email=?";
             PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete3);
             pst.setInt(1, fp.getAge());
             pst.setString(2, fp.getNom());
@@ -84,7 +84,7 @@ public class candidateCRUD {
             pst.setString(5, fp.getMdp());
             pst.setString(6, fp.getNumTel());
             pst.setString(7, fp.getAdresse());
-            pst.setInt(8, a);
+            pst.setString(8, a);
             pst.executeUpdate();
             System.out.println("candidate modifiée avec succès!");
             

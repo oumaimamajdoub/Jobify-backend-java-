@@ -9,6 +9,7 @@ import edu.esprit.entities.admin;
 import edu.esprit.services.adminCRUD;
 import java.io.IOException;
 import java.net.URL;
+import static java.time.zone.ZoneRulesProvider.refresh;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -23,6 +24,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -32,7 +34,7 @@ import javafx.scene.input.MouseEvent;
 public class HomeAController implements Initializable {
 
     @FXML
-    private TableView<admin> tab;
+    private AnchorPane tableadmin;
     @FXML
     private TableColumn<admin, String> cemailadmin;
     @FXML
@@ -43,15 +45,20 @@ public class HomeAController implements Initializable {
     private TableColumn<admin, Integer> cidadmin;
     @FXML
     private Button butSupp;
+    @FXML
+    private TableView<admin> tab;
 
     /**
      * Initializes the controller class.
+     *
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         loadTableAdmin();
-    }    
+    }
     ObservableList<admin> oblist = FXCollections.observableArrayList();
 
     adminCRUD us = new adminCRUD();
@@ -66,31 +73,31 @@ public class HomeAController implements Initializable {
 
         tab.setItems(oblist);
     }
-    admin ad= new admin();
+    admin ad = new admin();
+
     @FXML
     private void getline(MouseEvent event) {
         int index = tab.getSelectionModel().getSelectedIndex();
-        ad.setEmail(cemailadmin.getCellData(index).toString());
-        ad.setMdp(cmdpadmin.getCellData(index).toString());
+        ad.setEmail(cemailadmin.getCellData(index));
+        ad.setMdp(cmdpadmin.getCellData(index));
         ad.setId(cidadmin.getCellData(index));
         //System.out.println(ad);
     }
 
     @FXML
     private void tomodifAdmin(ActionEvent event) {
-        /*FXMLLoader loader =
-                new FXMLLoader(getClass().getResource("AfficherAdmin.fxml"));
+        FXMLLoader loader
+                = new FXMLLoader(getClass().getResource("MOFA.fxml"));
         try {
             Parent root = loader.load();
-            AfficherAdminController aac= loader.getController();
-            
-            aac.setTfemail(a.getEmail());
-            aac.setTfmdp(a.getMdp());
-            
-            tfmdp.getScene().setRoot(root);
+            MOFAController auc = loader.getController();
+            auc.setmemail(ad.getEmail());
+            auc.setmmdp(ad.getMdp());
+
+            tab.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.print(ex.getMessage());
-        }*/
+        }
     }
 
     @FXML

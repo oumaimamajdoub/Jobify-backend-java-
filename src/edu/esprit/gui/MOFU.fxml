@@ -5,8 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="464.0" prefWidth="463.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="edu.esprit.gui.MOFUController">
+<AnchorPane id="AnchorPane" prefHeight="464.0" prefWidth="463.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.MOFUController">
    <children>
       <Label layoutX="164.0" layoutY="37.0" prefHeight="21.0" prefWidth="46.0" text="nom" />
       <Label layoutX="164.0" layoutY="75.0" text="prenom" />
@@ -24,6 +23,6 @@
       <TextField fx:id="mnumtelu" layoutX="255.0" layoutY="238.0" />
       <TextField fx:id="madresseu" layoutX="255.0" layoutY="275.0" />
       <TextField fx:id="mroleu" layoutX="255.0" layoutY="313.0" />
-      <Button fx:id="mmodifier" layoutX="255.0" layoutY="387.0" mnemonicParsing="false" text="MODIFIER" />
+      <Button fx:id="mmodifier" layoutX="255.0" layoutY="387.0" mnemonicParsing="false" onAction="#valModU" text="MODIFIER" />
    </children>
 </AnchorPane>

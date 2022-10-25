@@ -5,8 +5,10 @@
  */
 package edu.esprit.gui;
 
+import edu.esprit.entities.User;
 import edu.esprit.entities.admin;
 import edu.esprit.services.adminCRUD;
+import edu.esprit.services.userCRUD;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -47,32 +49,36 @@ public class MOFAController implements Initializable {
         // TODO
     }    
 
-
-  
+    public void setmemail(String message) {
+        this.memail.setText(message);
+    }
+    public void setmmdp(String message) {
+        this.mmdp.setText(message);
+    }
       
+    @FXML
      private void modadmin(ActionEvent event) {
         String email=memail.getText();
         String mdp=mmdp.getText();
         
-        admin a = new admin(email,mdp);
-        adminCRUD ac = new adminCRUD();
-        ac.modifieradmin(a);
+        admin u = new admin(email,  mdp);
+        
+        adminCRUD uc = new adminCRUD();
+        
+        uc.modifieradmin(email, u);
         
         FXMLLoader loader =
-                new FXMLLoader(getClass().getResource("MOFA.fxml"));
+                new FXMLLoader(getClass().getResource("HomeA.fxml"));
         try {
             Parent root = loader.load();
-           AfficherAdminController acc= loader.getController();
             
-            acc.setTmemail(a.getEmail());
-            acc.setTmmdp(a.getMdp());
             
-           
-        /*    memail.getScene().setRoot(root);*/
+            memail.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.print(ex.getMessage());
         }
-    }}
+    } 
+}
 
  
 

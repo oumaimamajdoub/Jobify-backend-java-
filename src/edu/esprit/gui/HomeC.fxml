@@ -19,5 +19,6 @@
         </columns>
       </TableView>
       <Button layoutX="420.0" layoutY="341.0" mnemonicParsing="false" onAction="#suppC" text="supp" />
+      <Button layoutX="310.0" layoutY="341.0" mnemonicParsing="false" onAction="#ModC" text="Modifier" />
    </children>
 </AnchorPane>

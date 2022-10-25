@@ -9,6 +9,7 @@ import edu.esprit.entities.User;
 import edu.esprit.entities.candidate;
 import edu.esprit.services.candidateCRUD;
 import edu.esprit.services.userCRUD;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -16,7 +17,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -91,5 +94,27 @@ public class HomeCController implements Initializable {
         tab.getItems().clear();
         loadTableCandidate();
         
+    }
+
+    @FXML
+    private void ModC(ActionEvent event) {
+        FXMLLoader loader =
+                new FXMLLoader(getClass().getResource("MOFC.fxml"));
+        try {
+            Parent root = loader.load();
+            MOFCController auc= loader.getController();
+            auc.setmnom(ca.getNom());
+            auc.setmprenom(ca.getPrenom());
+            auc.setmemail(ca.getEmail());
+            auc.setmage(""+ca.getAge());
+            auc.setmmdp(ca.getMdp());
+            auc.setmnumtel(ca.getNumTel());
+            auc.setmadd(ca.getAdresse());
+            //auc.setMail(uu.getEmail());
+            
+            tab.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.print(ex.getMessage());
+        }
     }
 }

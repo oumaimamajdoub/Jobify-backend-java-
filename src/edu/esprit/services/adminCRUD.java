@@ -56,15 +56,15 @@ public class adminCRUD {
      * @param fp
      * @param fp1
      */
-    public void modifieradmin(int a, admin fp){
+    public void modifieradmin(String a, admin fp){
         
         try {
-            String requete3 = " UPDATE `user` SET `age`=?,`nom`=?,`prenom`=?,`email`=?,`mdp`=?,`numTel`=?,`Adresse`=? WHERE id=?";
+            String requete3 = " UPDATE `user` SET `email`=?,`mdp`=? WHERE email=?";
             PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete3);
             
             pst.setString(1, fp.getEmail());
             pst.setString(2, fp.getMdp());
-            pst.setInt(8, a);
+            pst.setString(3, a);
             pst.executeUpdate();
             System.out.println("Admin modifiée avec succès!");
             
@@ -96,7 +96,5 @@ public class adminCRUD {
         return myList;
     }
 
-    public void modifieradmin(admin a) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }

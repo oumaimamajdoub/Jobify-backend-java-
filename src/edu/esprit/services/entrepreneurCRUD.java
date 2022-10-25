@@ -72,17 +72,17 @@ public class entrepreneurCRUD {
      * @param fp
      * @param fp1
      */
-    public void modifierentrepreneur(int a, entrepreneur fp){
+    public void modifierentrepreneur(String a, entrepreneur fp){
         
         try {
-            String requete3 = " UPDATE `user` SET ``nom`=?,`email`=?,`mdp`=?,`numTel`=?,`Adresse`=? WHERE id=?";
+            String requete3 = " UPDATE `user` SET `nom`=?,`email`=?,`mdp`=?,`numTel`=?,`Adresse`=? WHERE email=?";
             PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete3);
             pst.setString(1, fp.getNom());
             pst.setString(2, fp.getEmail());
             pst.setString(3, fp.getMdp());
             pst.setString(4, fp.getNumTel());
             pst.setString(5, fp.getAdresse());
-            pst.setInt(6, a);
+            pst.setString(6, a);
             pst.executeUpdate();
             System.out.println("entrepreneur modifiée avec succès!");
             

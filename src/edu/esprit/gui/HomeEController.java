@@ -9,6 +9,7 @@ import edu.esprit.entities.User;
 import edu.esprit.entities.entrepreneur;
 import edu.esprit.services.entrepreneurCRUD;
 import edu.esprit.services.userCRUD;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -16,7 +17,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -96,6 +99,23 @@ public class HomeEController implements Initializable {
 
     @FXML
     private void tomodif(ActionEvent event) {
+         FXMLLoader loader =
+                new FXMLLoader(getClass().getResource("MODE.fxml"));
+        try {
+            Parent root = loader.load();
+            MODEController auc= loader.getController();
+            auc.setmnom(ee.getNom());
+            auc.setmemail(ee.getEmail());
+            auc.setmmdp(ee.getMdp());
+            auc.setmnumtel(ee.getNumTel());
+            auc.setmadd(ee.getAdresse());
+ 
+            //auc.setMail(uu.getEmail());
+            
+            tab.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.print(ex.getMessage());
+        }
     }
 
 
