@@ -7,25 +7,61 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="730.0" prefWidth="1176.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.DocumentFXMLController">
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="730.0" prefWidth="1176.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.DocumentFXMLController">
    <children>
-      <TableView fx:id="tabledocument" layoutX="86.0" layoutY="124.0" prefHeight="395.0" prefWidth="705.0">
+      <ImageView fitHeight="827.0" fitWidth="885.0" layoutX="23.0" layoutY="8.0">
+         <image>
+            <Image url="@../img/Yellow%20Modern%20We%20Are%20Hiring.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tabledocument" layoutX="18.0" layoutY="220.0" prefHeight="453.0" prefWidth="810.0">
         <columns>
-          <TableColumn fx:id="tcnom" prefWidth="94.0" text="Nom" />
-          <TableColumn fx:id="tcpath" prefWidth="306.0" text="Path" />
-            <TableColumn fx:id="tcdate" prefWidth="187.0" text="Date de creation" />
-            <TableColumn fx:id="tccontrat" prefWidth="117.0" text="id Contrat" />
+          <TableColumn fx:id="tcnom" prefWidth="123.0" text="Nom" />
+          <TableColumn fx:id="tcpath" prefWidth="277.0" text="Path" />
+            <TableColumn fx:id="tcdate" prefWidth="231.0" text="Date de creation" />
+            <TableColumn fx:id="tccontrat" prefWidth="151.0" text="id Contrat" />
         </columns>
       </TableView>
-      <TextField fx:id="tfnom" layoutX="848.0" layoutY="140.0" prefHeight="31.0" prefWidth="218.0" promptText="Nom" />
-      <DatePicker fx:id="dpdatecreation" layoutX="848.0" layoutY="342.0" promptText="Date de creation" />
-      <ComboBox fx:id="cbcontrat" layoutX="848.0" layoutY="412.0" prefHeight="31.0" prefWidth="218.0" promptText="Contrat" />
-      <Button layoutX="816.0" layoutY="488.0" mnemonicParsing="false" onAction="#ajouterdocument" text="Ajouter" />
-      <Button layoutX="925.0" layoutY="488.0" mnemonicParsing="false" onAction="#modifierdocument" text="Modifier" />
-      <Button layoutX="1034.0" layoutY="488.0" mnemonicParsing="false" onAction="#supprimerdocument" text="Supprimer" />
-      <Button layoutX="990.0" layoutY="213.0" mnemonicParsing="false" onAction="#uploaddocument" text="Upload" />
-      <Label fx:id="labelpath" layoutX="874.0" layoutY="218.0" text="Label" />
+      <TextField fx:id="tfnom" layoutX="925.0" layoutY="140.0" prefHeight="31.0" prefWidth="218.0" promptText="Nom" />
+      <DatePicker fx:id="dpdatecreation" layoutX="957.0" layoutY="402.0" promptText="Date de creation" AnchorPane.bottomAnchor="402.0" AnchorPane.leftAnchor="957.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="402.0" />
+      <ComboBox fx:id="cbcontrat" layoutX="954.0" layoutY="342.0" prefHeight="31.0" prefWidth="218.0" promptText="Contrat" AnchorPane.topAnchor="342.0" />
+      <Button layoutX="915.0" layoutY="488.0" mnemonicParsing="false" onAction="#ajouterdocument" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button layoutX="1014.0" layoutY="488.0" mnemonicParsing="false" onAction="#modifierdocument" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Modifier">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button layoutX="1122.0" layoutY="488.0" mnemonicParsing="false" onAction="#supprimerdocument" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Supprimer">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button layoutX="1066.0" layoutY="203.0" mnemonicParsing="false" onAction="#uploaddocument" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Upload">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Label fx:id="labelpath" layoutX="914.0" layoutY="208.0" text="Label" />
+      <Button fx:id="gotogstpost" layoutX="18.0" layoutY="8.0" mnemonicParsing="false" onAction="#gotogstpost" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Gestion des poste">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="gotogscontrat" layoutX="1037.0" layoutY="20.0" mnemonicParsing="false" onAction="#gotogstcontrat" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Gestion des contrats">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="704.0" layoutY="171.0" mnemonicParsing="false" onAction="#triparnom" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Tri par nom">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="tfrecherche" layoutX="23.0" layoutY="177.0" promptText="Recheche" />
    </children>
 </AnchorPane>

@@ -133,4 +133,8 @@ public class PostCRUD implements IService<Post> {
     
         return myList;
     }
+    public String getTitrePostById(int id){
+        Post post=afficher().stream().filter(p->p.getId()==id).findFirst().orElse(null);
+        return post.getTitre();
+    }
 }

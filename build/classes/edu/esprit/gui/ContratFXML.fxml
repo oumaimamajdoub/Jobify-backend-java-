@@ -5,11 +5,19 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="732.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.ContratFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="732.0" prefWidth="1154.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.ContratFXMLController">
    <children>
-      <TableView fx:id="tableContrat" layoutX="31.0" layoutY="91.0" prefHeight="408.0" prefWidth="715.0">
+      <ImageView fitHeight="732.0" fitWidth="803.0">
+         <image>
+            <Image url="@../img/Yellow%20Modern%20We%20Are%20Hiring.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tableContrat" layoutX="75.0" layoutY="209.0" prefHeight="408.0" prefWidth="715.0">
         <columns>
           <TableColumn fx:id="tcType" prefWidth="75.0" text="Type" />
           <TableColumn fx:id="tcDateDebut" prefWidth="189.99996948242188" text="Date debut" />
@@ -18,13 +26,43 @@
             <TableColumn fx:id="tctitre" prefWidth="146.0" text="Titre" />
         </columns>
       </TableView>
-      <TextField fx:id="tfType" layoutX="825.0" layoutY="146.0" prefHeight="31.0" prefWidth="218.0" promptText="Type" />
-      <TextField fx:id="tfSalaire" layoutX="825.0" layoutY="379.0" prefHeight="31.0" prefWidth="218.0" promptText="Salaire" />
-      <DatePicker fx:id="dpDebut" layoutX="825.0" layoutY="264.0" promptText="Date debut" />
-      <DatePicker fx:id="dpFin" layoutX="825.0" layoutY="323.0" promptText="Date fin" />
-      <Button fx:id="bt" layoutX="763.0" layoutY="449.0" mnemonicParsing="false" onAction="#ajoutContrat" text="Ajouter" />
-      <Button layoutX="874.0" layoutY="449.0" mnemonicParsing="false" onAction="#modifierContrat" text="Modifier" />
-      <Button layoutX="989.0" layoutY="449.0" mnemonicParsing="false" onAction="#supprimerContrat" text="Supprimer" />
-      <TextField fx:id="tftitre" layoutX="825.0" layoutY="209.0" prefHeight="31.0" prefWidth="218.0" promptText="Titre" />
+      <TextField fx:id="tfType" layoutX="903.0" layoutY="147.0" prefHeight="31.0" prefWidth="218.0" promptText="Type" />
+      <TextField fx:id="tfSalaire" layoutX="903.0" layoutY="382.0" prefHeight="31.0" prefWidth="218.0" promptText="Salaire" />
+      <DatePicker fx:id="dpDebut" layoutX="903.0" layoutY="260.0" promptText="Date debut" />
+      <DatePicker fx:id="dpFin" layoutX="903.0" layoutY="322.0" promptText="Date fin" />
+      <Button fx:id="bt" layoutX="824.0" layoutY="449.0" mnemonicParsing="false" onAction="#ajoutContrat" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button layoutX="963.0" layoutY="449.0" mnemonicParsing="false" onAction="#modifierContrat" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Modifier">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button layoutX="1084.0" layoutY="449.0" mnemonicParsing="false" onAction="#supprimerContrat" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Supprimer">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <TextField fx:id="tftitre" layoutX="903.0" layoutY="201.0" prefHeight="31.0" prefWidth="218.0" promptText="Titre" />
+      <Button fx:id="gotogstpost" layoutY="15.0" mnemonicParsing="false" onAction="#gotogstpost" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Gestion des postes">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="gotogstdocument" layoutX="1004.0" layoutY="34.0" mnemonicParsing="false" onAction="#gotogstdocument" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Gection des document">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="bttriparsalaire" layoutX="648.0" layoutY="162.0" mnemonicParsing="false" onAction="#trisalaire" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Tri par Salaire">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btTriparTitre" layoutX="648.0" layoutY="108.0" mnemonicParsing="false" onAction="#triparTitre" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text=" Tri par Titre">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="tfrecherche" layoutX="14.0" layoutY="166.0" promptText="Recherche" />
    </children>
 </AnchorPane>

@@ -5,6 +5,7 @@
  */
 package edu.esprit.services;
 import edu.esprit.entities.Contrat;
+import edu.esprit.entities.Post;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -14,7 +15,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import edu.esprit.utils.MyConnection;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -131,5 +134,44 @@ public class ContratCRUD implements IService<Contrat>{
         Contrat c1=afficher().stream().filter(c->c.getTitre().equals(titre)).findFirst().orElse(null);
         return c1.getId();
     }
+
+  public List<Contrat> triParSalaire(){
+        return afficher().stream().sorted(Comparator.comparing(Contrat::getSalaire)).collect(Collectors.toList());
+    }
+    public List<Contrat> triParTitre(){
+         List<Contrat>myList = new ArrayList<>();
+        try {
+            
+            String requet2="SELECT * FROM contrat order by titre";
+            Statement st = Cnx.prepareStatement(requet2);              
+            ResultSet rs = st.executeQuery(requet2);
+            while(rs.next()){
+                Contrat C = new Contrat();
+                C.setId(rs.getInt(1));
+                C.setTitre(rs.getString("titre"));
+                C.setDateDebut(rs.getDate("dateDebut"));
+                C.setDateFin(rs.getDate("dateFin"));
+                
+                C.setType(rs.getNString("type"));
+                C.setSalaire(rs.getInt("salaire"));
+                myList.add(C);
+            }
+               
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    
+        return myList;
+    }
+    
+
+
+
+
 }
+
+
+
+
+
 

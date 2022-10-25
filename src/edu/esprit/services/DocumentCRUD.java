@@ -5,6 +5,7 @@
  */
 package edu.esprit.services;
 import edu.esprit.entities.Document;
+import edu.esprit.entities.Post;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -14,7 +15,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import edu.esprit.utils.MyConnection;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 /**
@@ -109,5 +112,35 @@ try {
     
         return myList;    
     }
+ public List<Document> triParNom(){
+         List<Document>myList = new ArrayList<>();
+        try {
+            
+            String requet2="SELECT * FROM document order by nom ";
+            Statement st = Cnx.prepareStatement(requet2);              
+            ResultSet rs = st.executeQuery(requet2);
+            while(rs.next()){
+                Document D = new Document();
+                D.setId(rs.getInt(1));
+                D.setDateDeCreation(rs.getDate("dateCreation"));
+                D.setPath(rs.getString("path"));
+                D.setNom(rs.getString("nom"));
+                D.setIdCandidat(rs.getInt("idCandidat"));
+                D.setIdContrat(rs.getInt("idContrat"));
+                myList.add(D);
+            }
+               
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    
+        return myList;
+    }
+
+               
+    
+
+
+
 }
 

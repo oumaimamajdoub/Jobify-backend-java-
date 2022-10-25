@@ -15,10 +15,10 @@
    <children>
       <ImageView fitHeight="830.0" fitWidth="915.0" layoutX="34.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../Downloads/Yellow%20Modern%20We%20Are%20Hiring.png" />
+            <Image url="@../img/Yellow%20Modern%20We%20Are%20Hiring.png" />
          </image>
       </ImageView>
-      <TableView fx:id="tablepost" layoutX="28.0" layoutY="211.0" prefHeight="483.0" prefWidth="806.0">
+      <TableView fx:id="tablepost" layoutX="28.0" layoutY="211.0" prefHeight="483.0" prefWidth="806.0" AnchorPane.bottomAnchor="144.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="423.0" AnchorPane.topAnchor="211.0">
         <columns>
           <TableColumn fx:id="tctitre" prefWidth="83.0" text="Titre" />
           <TableColumn fx:id="tcdescription" prefWidth="273.0" text="Description" />
@@ -64,5 +64,19 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
+      <TextField fx:id="tfrecherche" layoutX="34.0" layoutY="164.0" promptText="Recherche" />
+      <Button layoutX="1072.0" layoutY="20.0" mnemonicParsing="false" onAction="#gotogstcontrat" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Gestion Contrat">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button defaultButton="true" layoutX="6.0" layoutY="10.0" mnemonicParsing="false" onAction="#gotogstdocument" prefHeight="39.0" prefWidth="194.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Gestion Document">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button layoutX="695.0" layoutY="59.0" mnemonicParsing="false" onAction="#gotostatistique" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Statistique">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
