@@ -136,5 +136,56 @@ public class userCRUD {
             System.err.println(ex.getMessage());
         }
     }
+    public User login(User u){
+    try {
+            String req4="SELECT * FROM `user` WHERE email='"+u.getEmail()+"' AND `mdp`='"+u.getMdp()+"'";
+            
+            PreparedStatement st = new MyConnection().getCnx().prepareStatement(req4);
+            
+            
+            ResultSet rs = st.executeQuery(req4);
+            
+                User ps=new User();
+                ps.setId(-1);
+                while(rs.next()){
+                ps.setId(rs.getInt("id"));
+                ps.setAge(rs.getInt("age"));
+                ps.setNom(rs.getString("nom"));
+                ps.setPrenom(rs.getString("prenom"));
+                ps.setEmail(rs.getString("email"));
+                ps.setMdp(rs.getString("mdp"));
+                ps.setNumTel(rs.getString("numTel"));
+                ps.setAdresse(rs.getString("adresse"));
+                ps.setRole(rs.getString("role"));
+                System.err.println("t3adet \n");
+                }
+
+                
+            
+                return ps;
+            
+        } catch (SQLException ex) {
+            System.err.println("mat3adetch \n"+ex.getMessage());
+            return null;
+        }
+    }
+    public void updateUserMdp(String mail, String mdp) {
+        
+        try {
+            String requete3 = " UPDATE `user` SET `mdp`=? WHERE email=?";
+            PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete3);
+            
+            pst.setString(1, mdp);
+            pst.setString(2, mail);
+            pst.executeUpdate();
+            System.out.println("user modifiée avec succès!");
+            
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
 }
      
+            
+                
+           

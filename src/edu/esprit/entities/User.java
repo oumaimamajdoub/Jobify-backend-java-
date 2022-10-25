@@ -51,11 +51,21 @@ public class User {
         this.Adresse = Adresse;
     }
 
+    public User(String email, String mdp) {
+        this.email = email;
+        this.mdp = mdp;
+    }
+
     public void setRole(String Role) {
         this.Role = Role;
     }
 
     public User() {
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", age=" + age + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", mdp=" + mdp + ", numTel=" + numTel + ", Adresse=" + Adresse + ", Role=" + Role + '}';
     }
 
     public User(int id) {
@@ -151,4 +161,6 @@ public class User {
         this.Adresse = Adresse;
         this.Role = Role;
     }
+
+
 }

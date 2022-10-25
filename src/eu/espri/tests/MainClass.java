@@ -11,6 +11,7 @@ import edu.esprit.services.entrepreneurCRUD;
 import edu.esprit.services.userCRUD;
 import edu.esprit.utils.MyConnection;
 import edu.esprit.entities.*;
+import edu.esprit.services.MailService;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,8 +39,10 @@ public class MainClass {
        //myList=(ArrayList<User>) pc.afficherUser();
        //pc.modifierUser(36, u2);
        //ac.modifieradmin("String", ad);
-       entrepreneur e = new entrepreneur("hsane","hsmohan","wiwwt","mdwiiwp","7");
-       pcd.modifierentrepreneur("1", e);
+       //entrepreneur e = new entrepreneur("hsane","hsmohan","wiwwt","mdwiiwp","7");
+       //pcd.modifierentrepreneur("1", e);
+       //MailService ms = new MailService();
+       //ms.SendMail("ahmed.lasmar@esprit.tn","test");
     }
     
 }
