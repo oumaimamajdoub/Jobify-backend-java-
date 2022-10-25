@@ -37,4 +37,12 @@ public class AfficherAdminController implements Initializable {
     public void setTfmdp(String message) {
         this.tfmdp.setText(message);
     }
+
+    void setTmemail(String email) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setTmmdp(String mdp) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

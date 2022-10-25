@@ -7,17 +7,17 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.HomeEController">
    <children>
-      <TableView fx:id="tab" layoutX="35.0" layoutY="26.0" onMouseClicked="#getdata" prefHeight="303.0" prefWidth="523.0">
+      <TableView fx:id="tab" layoutX="130.0" layoutY="31.0" onMouseClicked="#getdata" prefHeight="298.0" prefWidth="376.0">
         <columns>
-          <TableColumn fx:id="cnome" prefWidth="75.0" text="C1" />
-          <TableColumn fx:id="cnumtele" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="cemaile" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="cadde" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="cmdpe" prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="cnome" prefWidth="75.0" text="Nom" />
+          <TableColumn fx:id="cnumtele" prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="cemaile" prefWidth="75.0" text="Addresse" />
+            <TableColumn fx:id="cadde" prefWidth="75.0" text="Mdp" />
+            <TableColumn fx:id="cmdpe" prefWidth="75.0" text="NumTel" />
         </columns>
       </TableView>
-      <Button fx:id="butmodif" layoutX="392.0" layoutY="341.0" mnemonicParsing="false" onAction="#tomodif" text="Modifier" />
-      <Button layoutX="493.0" layoutY="341.0" mnemonicParsing="false" onAction="#tosuppE" text="Supp" />
-      <Button fx:id="butmodif1" layoutX="262.0" layoutY="341.0" mnemonicParsing="false" onAction="#tomodif" text="Modifier" />
+      <Button fx:id="butmodif" layoutX="26.0" layoutY="229.0" mnemonicParsing="false" onAction="#tomodif" text="Modifier" />
+      <Button layoutX="37.0" layoutY="79.0" mnemonicParsing="false" onAction="#tosuppE" text="Supp" />
+      <Button fx:id="butmodif1" layoutX="26.0" layoutY="155.0" mnemonicParsing="false" onAction="#tomodif" text="Modifier" />
    </children>
 </AnchorPane>

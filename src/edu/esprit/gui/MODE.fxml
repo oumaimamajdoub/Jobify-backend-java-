@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="511.0" prefWidth="510.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="edu.esprit.gui.MODEController">
+   <children>
+      <Label layoutX="67.0" layoutY="48.0" text="Nom" />
+      <Label layoutX="66.0" layoutY="108.0" text="Email" />
+      <Label layoutX="68.0" layoutY="169.0" text="Mdp" />
+      <Label layoutX="58.0" layoutY="232.0" text="NumTel" />
+      <Label layoutX="58.0" layoutY="312.0" text="Adresse" />
+      <TextField fx:id="mnome" layoutX="247.0" layoutY="43.0" />
+      <TextField fx:id="memaile" layoutX="247.0" layoutY="103.0" />
+      <TextField fx:id="mmdpe" layoutX="247.0" layoutY="164.0" />
+      <TextField fx:id="mnumtele" layoutX="247.0" layoutY="227.0" />
+      <TextField fx:id="madressee" layoutX="256.0" layoutY="297.0" />
+      <Button fx:id="mode" layoutX="198.0" layoutY="401.0" mnemonicParsing="false" onAction="#modentrepreneur" text="MODIFIER" />
+   </children>
+</AnchorPane>

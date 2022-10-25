@@ -73,6 +73,7 @@ public class adminCRUD {
         }
     }
     
+    
     public List<admin> afficheradmin(){
         List<admin> myList = new ArrayList<admin>();
         try {  
@@ -93,5 +94,9 @@ public class adminCRUD {
             System.err.println(ex.getMessage());
         }
         return myList;
+    }
+
+    public void modifieradmin(admin a) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

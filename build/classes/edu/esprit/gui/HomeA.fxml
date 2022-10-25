@@ -7,14 +7,14 @@
 
 <AnchorPane id="AnchorPane" prefHeight="529.0" prefWidth="461.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.HomeAController">
    <children>
-      <TableView fx:id="tab" layoutX="38.0" layoutY="35.0" onMouseClicked="#getline" prefHeight="444.0" prefWidth="290.0">
+      <TableView fx:id="tab" layoutX="38.0" layoutY="36.0" onMouseClicked="#getline" prefHeight="443.0" prefWidth="224.0">
         <columns>
-            <TableColumn fx:id="cidadmin" prefWidth="75.0" text="C1" />
-          <TableColumn fx:id="cemailadmin" prefWidth="75.0" text="C1" />
-          <TableColumn fx:id="cmdpadmin" prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="cidadmin" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="cemailadmin" prefWidth="75.0" text="Email" />
+          <TableColumn fx:id="cmdpadmin" prefWidth="75.0" text="Mdp" />
         </columns>
       </TableView>
-      <Button fx:id="butmodif" layoutX="353.0" layoutY="47.0" mnemonicParsing="false" onAction="#tomodifAdmin" text="Button" />
-      <Button fx:id="butSupp" layoutX="353.0" layoutY="105.0" mnemonicParsing="false" onAction="#toSuppAdmin" text="Supp" />
+      <Button fx:id="butmodif" layoutX="309.0" layoutY="227.0" mnemonicParsing="false" onAction="#tomodifAdmin" text="Mod" />
+      <Button fx:id="butSupp" layoutX="307.0" layoutY="319.0" mnemonicParsing="false" onAction="#toSuppAdmin" text="Supp" />
    </children>
 </AnchorPane>

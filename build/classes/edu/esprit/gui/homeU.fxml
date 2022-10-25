@@ -7,18 +7,18 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.HomeUController">
    <children>
-      <TableView fx:id="tab" layoutX="24.0" layoutY="32.0" onMouseClicked="#getdatauser" prefHeight="386.0" prefWidth="740.0">
+      <TableView fx:id="tab" layoutX="95.0" layoutY="51.0" onMouseClicked="#getdatauser" prefHeight="380.0" prefWidth="596.0">
         <columns>
-          <TableColumn fx:id="cnom" prefWidth="75.0" text="C1" />
-          <TableColumn fx:id="cprenom" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="cage" prefWidth="75.0" text="C1" />
-            <TableColumn fx:id="cemail" prefWidth="75.0" text="C1" />
-            <TableColumn fx:id="cmdp" prefWidth="75.0" text="C1" />
-            <TableColumn fx:id="cnumtel" prefWidth="75.0" text="C1" />
-            <TableColumn fx:id="cadd" prefWidth="75.0" text="C1" />
-            <TableColumn fx:id="crole" prefWidth="75.0" text="C1" />
+          <TableColumn fx:id="cnom" prefWidth="75.0" text="Nom" />
+          <TableColumn fx:id="cprenom" prefWidth="75.0" text="Prenom" />
+            <TableColumn fx:id="cage" prefWidth="75.0" text="Age" />
+            <TableColumn fx:id="cemail" prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="cmdp" prefWidth="75.0" text="Mdp" />
+            <TableColumn fx:id="cnumtel" prefWidth="75.0" text="NumTel" />
+            <TableColumn fx:id="cadd" prefWidth="75.0" text="Addesse" />
+            <TableColumn fx:id="crole" prefWidth="75.0" text="Role" />
         </columns>
       </TableView>
-      <Button layoutX="476.0" layoutY="492.0" mnemonicParsing="false" onAction="#tosuppuser" text="supp" />
+      <Button layoutX="203.0" layoutY="476.0" mnemonicParsing="false" onAction="#tosuppuser" prefHeight="32.0" prefWidth="131.0" text="supp" />
    </children>
 </AnchorPane>

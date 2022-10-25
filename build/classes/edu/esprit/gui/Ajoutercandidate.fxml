@@ -7,12 +7,12 @@
 
 <AnchorPane id="AnchorPane" fx:id="tfValider" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.AjoutercandidateController">
     <children>
-        <Label layoutX="63.0" layoutY="55.0" prefHeight="21.0" prefWidth="54.0" text=" nom" />
-        <Label layoutX="62.0" layoutY="102.0" prefHeight="21.0" prefWidth="71.0" text=" prenom" />
-        <Label layoutX="72.0" layoutY="150.0" text="age" />
-        <Label layoutX="72.0" layoutY="199.0" prefHeight="21.0" prefWidth="54.0" text="email" />
-        <Label layoutX="72.0" layoutY="253.0" prefHeight="21.0" prefWidth="54.0" text=" mdp" />
-        <Label layoutX="63.0" layoutY="305.0" prefHeight="21.0" prefWidth="71.0" text="numTel" />
+        <Label layoutX="63.0" layoutY="55.0" prefHeight="21.0" prefWidth="54.0" text=" Nom" />
+        <Label layoutX="62.0" layoutY="102.0" prefHeight="21.0" prefWidth="71.0" text="Prenom" />
+        <Label layoutX="72.0" layoutY="150.0" text="Age" />
+        <Label layoutX="72.0" layoutY="199.0" prefHeight="21.0" prefWidth="54.0" text="Email" />
+        <Label layoutX="72.0" layoutY="253.0" prefHeight="21.0" prefWidth="54.0" text="Mdp" />
+        <Label layoutX="63.0" layoutY="305.0" prefHeight="21.0" prefWidth="71.0" text="NumTel" />
         <Label layoutX="63.0" layoutY="346.0" text="Adresse" />
         <TextField fx:id="tfnom" layoutX="194.0" layoutY="50.0" />
         <TextField fx:id="tfprenom" layoutX="194.0" layoutY="97.0" />

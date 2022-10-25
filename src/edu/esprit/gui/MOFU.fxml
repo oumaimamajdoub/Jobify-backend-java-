@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="464.0" prefWidth="463.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="edu.esprit.gui.MOFUController">
+   <children>
+      <Label layoutX="164.0" layoutY="37.0" prefHeight="21.0" prefWidth="46.0" text="nom" />
+      <Label layoutX="164.0" layoutY="75.0" text="prenom" />
+      <Label layoutX="164.0" layoutY="114.0" text="age" />
+      <Label layoutX="164.0" layoutY="158.0" text="email" />
+      <Label layoutX="164.0" layoutY="200.0" text="mdp" />
+      <Label layoutX="164.0" layoutY="243.0" text="numTel" />
+      <Label layoutX="164.0" layoutY="280.0" text="Adresse" />
+      <Label layoutX="176.0" layoutY="328.0" text="Role" />
+      <TextField fx:id="mnomu" layoutX="255.0" layoutY="32.0" />
+      <TextField fx:id="mprenomu" layoutX="255.0" layoutY="70.0" />
+      <TextField fx:id="mageu" layoutX="255.0" layoutY="109.0" />
+      <TextField fx:id="memailu" layoutX="255.0" layoutY="153.0" />
+      <TextField fx:id="mmdpu" layoutX="255.0" layoutY="195.0" />
+      <TextField fx:id="mnumtelu" layoutX="255.0" layoutY="238.0" />
+      <TextField fx:id="madresseu" layoutX="255.0" layoutY="275.0" />
+      <TextField fx:id="mroleu" layoutX="255.0" layoutY="313.0" />
+      <Button fx:id="mmodifier" layoutX="255.0" layoutY="387.0" mnemonicParsing="false" text="MODIFIER" />
+   </children>
+</AnchorPane>

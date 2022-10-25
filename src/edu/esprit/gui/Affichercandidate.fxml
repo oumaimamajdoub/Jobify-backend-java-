@@ -6,19 +6,19 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.AffichercandidateController">
    <children>
-      <Label layoutX="63.0" layoutY="48.0" prefHeight="21.0" prefWidth="61.0" text=" nom" />
-      <Label layoutX="60.0" layoutY="96.0" prefHeight="21.0" prefWidth="68.0" text="prenom" />
-      <Label layoutX="70.0" layoutY="151.0" text="age" />
-      <Label layoutX="63.0" layoutY="201.0" prefHeight="21.0" prefWidth="61.0" text="email" />
-      <Label layoutX="63.0" layoutY="258.0" prefHeight="21.0" prefWidth="61.0" text="mdp" />
-      <Label layoutX="53.0" layoutY="311.0" prefHeight="21.0" prefWidth="83.0" text="numTel" />
+      <Label layoutX="63.0" layoutY="48.0" prefHeight="21.0" prefWidth="61.0" text="Nom" />
+      <Label layoutX="60.0" layoutY="96.0" prefHeight="21.0" prefWidth="68.0" text="Prenom" />
+      <Label layoutX="67.0" layoutY="140.0" text="Age" />
+      <Label layoutX="60.0" layoutY="186.0" prefHeight="21.0" prefWidth="61.0" text="Email" />
+      <Label layoutX="60.0" layoutY="232.0" prefHeight="21.0" prefWidth="61.0" text="Mdp" />
+      <Label layoutX="53.0" layoutY="284.0" prefHeight="21.0" prefWidth="83.0" text="NumTel" />
       <TextField fx:id="tfnom" editable="false" layoutX="207.0" layoutY="43.0" />
       <TextField fx:id="tfprenom" editable="false" layoutX="207.0" layoutY="91.0" />
-      <TextField fx:id="tfemail" editable="false" layoutX="207.0" layoutY="196.0" />
-      <TextField fx:id="tfmdp" editable="false" layoutX="207.0" layoutY="253.0" />
-      <TextField fx:id="tfnumTel" editable="false" layoutX="207.0" layoutY="306.0" />
+      <TextField fx:id="tfemail" editable="false" layoutX="207.0" layoutY="181.0" />
+      <TextField fx:id="tfmdp" editable="false" layoutX="207.0" layoutY="227.0" />
+      <TextField fx:id="tfnumTel" editable="false" layoutX="207.0" layoutY="279.0" />
       <TextField fx:id="tfage" editable="false" layoutX="207.0" layoutY="135.0" />
-      <Label layoutX="53.0" layoutY="352.0" text="Adresse" />
-      <TextField fx:id="tfAdresse" editable="false" layoutX="207.0" layoutY="358.0" />
+      <Label layoutX="54.0" layoutY="330.0" text="Adresse" />
+      <TextField fx:id="tfAdresse" editable="false" layoutX="207.0" layoutY="325.0" />
    </children>
 </AnchorPane>
