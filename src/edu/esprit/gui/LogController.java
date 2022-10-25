@@ -43,17 +43,7 @@ public class LogController implements Initializable {
         // TODO
     }
 
-    @FXML
-    private void mdpO(MouseEvent event) {
-         FXMLLoader loader
-                    = new FXMLLoader(getClass().getResource("ObliMDP.fxml"));
-            try {
-                Parent root = loader.load();
-                Lmail.getScene().setRoot(root);
-            } catch (IOException ex) {
-                System.out.println(ex.getMessage());
-            }
-    }
+    
 
     @FXML
     private void Login(ActionEvent event) throws SQLException {
@@ -79,6 +69,18 @@ public class LogController implements Initializable {
         } else {
             errLogin.setText("mail ou mdp incorrect");
         }
+    }
+
+    @FXML
+    private void mdpO(ActionEvent event) {
+        FXMLLoader loader
+                    = new FXMLLoader(getClass().getResource("ObliMDP.fxml"));
+            try {
+                Parent root = loader.load();
+                Lmail.getScene().setRoot(root);
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
     }
     
 }
