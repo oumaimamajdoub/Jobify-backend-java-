@@ -122,6 +122,7 @@ public class HomeEController implements Initializable {
             tab.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.print(ex.getMessage());
+
         }
     }
     entrepreneurCRUD ec= new entrepreneurCRUD();
@@ -153,6 +154,7 @@ public class HomeEController implements Initializable {
         } catch (IOException ex) {
             System.out.print(ex.getMessage());
         }
+        
     }
 
 
