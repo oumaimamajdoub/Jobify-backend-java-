@@ -2,19 +2,39 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="edu.esprit.gui.AfficherEController">
+<AnchorPane id="AnchorPane" prefHeight="694.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.AfficherEController">
      <children>
-      <Label layoutX="80.0" layoutY="58.0" prefHeight="21.0" prefWidth="44.0" text="Nom" />
-      <Label layoutX="84.0" layoutY="109.0" text="Email" />
-      <Label layoutX="85.0" layoutY="157.0" text="Mdp" />
-      <Label layoutX="76.0" layoutY="211.0" prefHeight="21.0" prefWidth="80.0" text="NumTel" />
-      <Label layoutX="74.0" layoutY="266.0" text="Adresse" />
-      <TextField fx:id="tfnom" layoutX="278.0" layoutY="53.0" />
-      <TextField fx:id="tfemail" layoutX="278.0" layoutY="104.0" />
-      <TextField fx:id="tfmdp" editable="false" layoutX="278.0" layoutY="152.0" />
-      <TextField fx:id="tfnumTel" editable="false" layoutX="278.0" layoutY="206.0" />
-      <TextField fx:id="tfAdresse" editable="false" layoutX="278.0" layoutY="261.0" />
+      <ImageView fitHeight="704.0" fitWidth="718.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../edu3/esprit/img/Yellow%20We%20Are%20Hiring.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="250.0" layoutY="214.0" prefHeight="21.0" prefWidth="44.0" text="Nom">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="254.0" layoutY="258.0" text="Email">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="256.0" layoutY="305.0" text="Mdp">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="241.0" layoutY="354.0" prefHeight="21.0" prefWidth="80.0" text="NumTel" />
+      <Label layoutX="246.0" layoutY="396.0" text="Adresse">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <TextField fx:id="tfnom" layoutX="381.0" layoutY="209.0" />
+      <TextField fx:id="tfemail" layoutX="381.0" layoutY="253.0" />
+      <TextField fx:id="tfmdp" editable="false" layoutX="381.0" layoutY="300.0" />
+      <TextField fx:id="tfnumTel" editable="false" layoutX="381.0" layoutY="349.0" />
+      <TextField fx:id="tfAdresse" editable="false" layoutX="381.0" layoutY="391.0" />
        </children>
 </AnchorPane>

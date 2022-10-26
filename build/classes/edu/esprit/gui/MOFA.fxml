@@ -3,14 +3,31 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.MOFAController">
+<AnchorPane id="AnchorPane" prefHeight="783.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.MOFAController">
    <children>
-      <Button fx:id="mbutton" layoutX="454.0" layoutY="127.0" mnemonicParsing="false" onAction="#modadmin" text="MODIFIER" />
-      <Label layoutX="73.0" layoutY="96.0" prefHeight="31.0" prefWidth="66.0" text="Email" />
-      <Label layoutX="73.0" layoutY="194.0" text="Mdp" />
-      <TextField fx:id="memail" layoutX="185.0" layoutY="96.0" />
-      <TextField fx:id="mmdp" layoutX="185.0" layoutY="189.0" />
+      <ImageView fitHeight="790.0" fitWidth="820.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../edu3/esprit/img/Yellow%20We%20Are%20Hiring.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="mbutton" layoutX="383.0" layoutY="414.0" mnemonicParsing="false" onAction="#modadmin" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #ffd344; -fx-border-radius: 15;" text="MODIFIER">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Label layoutX="265.0" layoutY="254.0" prefHeight="31.0" prefWidth="66.0" text="Email">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="265.0" layoutY="330.0" text="Mdp">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <TextField fx:id="memail" layoutX="401.0" layoutY="254.0" />
+      <TextField fx:id="mmdp" layoutX="401.0" layoutY="328.0" />
    </children>
 </AnchorPane>

@@ -22,11 +22,11 @@
             <TableColumn fx:id="cidadmin" prefWidth="165.0" text="Id" />
         </columns>
       </TableView>
-      <Button fx:id="butmodif" layoutX="539.0" layoutY="281.0" mnemonicParsing="false" onAction="#tomodifAdmin" prefHeight="31.0" prefWidth="183.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Modifier ">
+      <Button fx:id="butmodif" layoutX="501.0" layoutY="399.0" mnemonicParsing="false" onAction="#tomodifAdmin" prefHeight="31.0" prefWidth="183.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Modifier ">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="butSupp" layoutX="566.0" layoutY="357.0" mnemonicParsing="false" onAction="#toSuppAdmin" prefHeight="31.0" prefWidth="130.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Supprimer ">
+      <Button fx:id="butSupp" layoutX="501.0" layoutY="468.0" mnemonicParsing="false" onAction="#toSuppAdmin" prefHeight="31.0" prefWidth="191.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Supprimer ">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
