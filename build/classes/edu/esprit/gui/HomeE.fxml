@@ -11,12 +11,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="578.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.HomeEController">
    <children>
-      <ImageView fitHeight="597.0" fitWidth="608.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="824.0" fitWidth="965.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../edu3/esprit/img/Yellow%20We%20Are%20Hiring.png" />
          </image>
       </ImageView>
-      <TableView fx:id="tab" layoutX="47.0" layoutY="238.0" onMouseClicked="#getdata" prefHeight="298.0" prefWidth="376.0">
+      <TableView fx:id="tab" layoutX="62.0" layoutY="269.0" onMouseClicked="#getdata" prefHeight="424.0" prefWidth="377.0">
         <columns>
           <TableColumn fx:id="cnome" prefWidth="75.0" text="Nom" />
           <TableColumn fx:id="cnumtele" prefWidth="75.0" text="Email" />
@@ -25,21 +25,21 @@
             <TableColumn fx:id="cmdpe" prefWidth="75.0" text="NumTel" />
         </columns>
       </TableView>
-      <Button fx:id="butmodif" layoutX="455.0" layoutY="366.0" mnemonicParsing="false" onAction="#tomodif" prefHeight="43.0" prefWidth="113.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Modifier">
+      <Button fx:id="butmodif" layoutX="615.0" layoutY="481.0" mnemonicParsing="false" onAction="#tomodif" prefHeight="43.0" prefWidth="113.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Modifier">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Button>
-      <Button layoutX="459.0" layoutY="296.0" mnemonicParsing="false" onAction="#tosuppE" prefHeight="43.0" prefWidth="104.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Supprimer">
+      <Button layoutX="620.0" layoutY="409.0" mnemonicParsing="false" onAction="#tosuppE" prefHeight="43.0" prefWidth="104.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Supprimer">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <TextField fx:id="idchercher" layoutX="67.0" layoutY="190.0" />
-      <Button layoutX="270.0" layoutY="178.0" mnemonicParsing="false" onAction="#Idcher" prefHeight="43.0" prefWidth="104.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Chercher">
+      <TextField fx:id="idchercher" layoutX="33.0" layoutY="206.0" />
+      <Button layoutX="250.0" layoutY="206.0" mnemonicParsing="false" onAction="#Idcher" prefHeight="43.0" prefWidth="104.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Chercher">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="ajouterentrep" layoutX="459.0" layoutY="238.0" mnemonicParsing="false" onAction="#toaddentrep" prefHeight="43.0" prefWidth="104.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Ajouter">
+      <Button fx:id="ajouterentrep" layoutX="620.0" layoutY="333.0" mnemonicParsing="false" onAction="#toaddentrep" prefHeight="43.0" prefWidth="104.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Ajouter">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
