@@ -3,11 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/gui/postFXML.fxml</file>
-            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/gui/applicationFXML.fxml</file>
             <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/gui/ContratFXMLController.java</file>
-            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/gui/DocumentFXMLController.java</file>
-            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/gui/Stat_application_postFXMLController.java</file>
+            <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/gui/ApplicationFXMLController.java</file>
             <file>file:/C:/Users/afefz/OneDrive/Bureau/PiDevJavaFX/PiDevProject/src/edu/esprit/gui/PostFXMLController.java</file>
         </group>
     </open-files>

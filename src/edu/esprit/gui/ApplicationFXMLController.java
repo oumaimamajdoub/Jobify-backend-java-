@@ -9,21 +9,28 @@ import edu.esprit.entities.Application;
 import edu.esprit.entities.Post;
 import edu.esprit.services.ApplicationCRUD;
 import edu.esprit.services.PostCRUD;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Paint;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import tray.animations.AnimationType;
 import tray.notification.NotificationType;
@@ -93,6 +100,23 @@ public class ApplicationFXMLController implements Initializable {
         tcdateexpiration.setCellValueFactory(new PropertyValueFactory<>("dateExpiration"));
         tcsalaire.setCellValueFactory(new PropertyValueFactory<>("salaire"));
         tablepost.setItems(data);
+    }
+
+    @FXML
+    private void gotogstpost(ActionEvent event) {
+        
+          try {
+            Parent root =FXMLLoader.load(getClass().getResource("/edu/esprit/gui/postFXML.fxml"));
+            Scene scene=new Scene(root);
+            Stage stage=new Stage();
+            stage.setTitle("Gestion des postes");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(PostFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
     }
     
 }

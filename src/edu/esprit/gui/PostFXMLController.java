@@ -34,6 +34,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -76,6 +77,8 @@ public class PostFXMLController implements Initializable {
     PostCRUD pc=new PostCRUD();
     @FXML
     private TextField tfrecherche;
+    @FXML
+    private Button btAppliquer;
   
     /**
      * Initializes the controller class.
@@ -169,6 +172,17 @@ public class PostFXMLController implements Initializable {
                 p.setSalaire(Integer.valueOf(tfsalaire.getText()));
                 p.setId(pselected.getId());
                 pc.modifier(p);
+                
+                TrayNotification tray=new TrayNotification();
+                 AnimationType type=AnimationType.POPUP;
+                 tray.setTitle("Modification d'un poste");
+                 tray.setMessage("Vous avez bien modifier un poste");
+                tray.setRectangleFill(Paint.valueOf("#2A9A84"));
+                tray.setNotificationType(NotificationType.SUCCESS);
+                tray.setAnimationType(type);
+                tray.showAndDismiss(Duration.seconds(2));
+
+                
                 refresh(pc.afficher());
                 rechercheavance();
             }
@@ -176,12 +190,22 @@ public class PostFXMLController implements Initializable {
         
         
     }
-
+                
     @FXML
     private void supprimerPost(ActionEvent event) {
         Post p=tablepost.getSelectionModel().getSelectedItem();
         if(p!=null){
             pc.supprimer(p.getId());
+            TrayNotification tray=new TrayNotification();
+                 AnimationType type=AnimationType.POPUP;
+                 tray.setTitle("Suppression d'un poste");
+                 tray.setMessage("Vous avez bien supprimer un poste");
+                tray.setRectangleFill(Paint.valueOf("#2A9A84"));
+                tray.setNotificationType(NotificationType.ERROR);
+                tray.setAnimationType(type);
+                tray.showAndDismiss(Duration.seconds(2));
+
+            
             refresh(pc.afficher());
             rechercheavance();
         }
@@ -286,6 +310,22 @@ public class PostFXMLController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(PostFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void AppliquerPoste(ActionEvent event) {
+        
+          try {
+            Parent root =FXMLLoader.load(getClass().getResource("/edu/esprit/gui/applicationFXML.fxml"));
+            Scene scene=new Scene(root);
+            Stage stage=new Stage();
+            stage.setTitle("Gestion application");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(PostFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
 }

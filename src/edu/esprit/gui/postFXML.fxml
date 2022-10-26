@@ -37,6 +37,10 @@
             <Font size="14.0" />
          </font>
       </TextArea>
+      <Button layoutX="878.0" layoutY="603.0" mnemonicParsing="false" onAction="#ajouterPost" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Button>
       <DatePicker fx:id="dpcreation" layoutX="927.0" layoutY="411.0" prefHeight="25.0" prefWidth="200.0" promptText="Date de creation" />
       <DatePicker fx:id="dpexpiration" layoutX="927.0" layoutY="476.0" prefHeight="25.0" prefWidth="200.0" promptText="Date d'expiration" />
       <TextField fx:id="tfsalaire" layoutX="927.0" layoutY="538.0" prefHeight="30.0" prefWidth="200.0" promptText="salaire">
@@ -44,10 +48,6 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <Button layoutX="878.0" layoutY="603.0" mnemonicParsing="false" onAction="#ajouterPost" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Ajouter">
-         <font>
-            <Font name="System Bold" size="19.0" />
-         </font></Button>
       <Button layoutX="989.0" layoutY="603.0" mnemonicParsing="false" onAction="#modifierPost" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Modifier">
          <font>
             <Font name="System Bold" size="19.0" />
@@ -76,6 +76,11 @@
       <Button layoutX="695.0" layoutY="59.0" mnemonicParsing="false" onAction="#gotostatistique" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Statistique">
          <font>
             <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btAppliquer" layoutX="211.0" layoutY="756.0" mnemonicParsing="false" onAction="#AppliquerPoste" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Appliquer">
+         <font>
+            <Font name="System Bold" size="19.0" />
          </font>
       </Button>
    </children>
