@@ -74,10 +74,10 @@ public class AjouterUserController implements Initializable {
         uc.ajouteruser(u);
         
         FXMLLoader loader =
-                new FXMLLoader(getClass().getResource("AffichageUser.fxml"));
+                new FXMLLoader(getClass().getResource("HomeU.fxml"));
         try {
             Parent root = loader.load();
-            AffichageUserController auc= loader.getController();
+            /*AffichageUserController auc= loader.getController();
             auc.setTfnom(u.getNom());
             auc.setTfprenom(u.getPrenom());
             auc.setTfemail(u.getEmail());
@@ -85,7 +85,7 @@ public class AjouterUserController implements Initializable {
             auc.setTfmdp(u.getMdp());
             auc.setTfnumTel(u.getNumTel());
             auc.setTfAdresse(u.getAdresse());
-            auc.setTfRole(u.getRole());
+            auc.setTfRole(u.getRole());*/
             
             tfnom.getScene().setRoot(root);
         } catch (IOException ex) {

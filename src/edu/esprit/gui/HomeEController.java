@@ -52,7 +52,7 @@ public class HomeEController implements Initializable {
     @FXML
     private Button butmodif;
     @FXML
-    private Button butmodif1;
+    private TextField idchercher;
 
     /**
      * Initializes the controller class.
@@ -121,6 +121,22 @@ public class HomeEController implements Initializable {
         } catch (IOException ex) {
             System.out.print(ex.getMessage());
         }
+    }
+    entrepreneurCRUD ec= new entrepreneurCRUD();
+    @FXML
+    private void Idcher(ActionEvent event) {
+        int id =Integer.parseInt(idchercher.getText()) ;
+         tab.getItems().clear();
+         List<entrepreneur> fs = ec.afficherentrepreneurbyId(id);
+        fs.forEach(e -> oblist.add(e));
+        System.out.println(oblist);
+        cnome.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        cemaile.setCellValueFactory(new PropertyValueFactory<>("email"));
+        cmdpe.setCellValueFactory(new PropertyValueFactory<>("mdp"));
+        cnumtele.setCellValueFactory(new PropertyValueFactory<>("numTel"));
+        cadde.setCellValueFactory(new PropertyValueFactory<>("Adresse"));
+
+        tab.setItems(oblist);
     }
 
 

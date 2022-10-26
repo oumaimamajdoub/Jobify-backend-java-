@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -27,13 +28,24 @@
             <TableColumn fx:id="crole" prefWidth="75.0" text="Role" />
         </columns>
       </TableView>
-      <Button layoutX="635.0" layoutY="434.0" mnemonicParsing="false" onAction="#tosuppuser" prefHeight="32.0" prefWidth="101.0" style="-fx-background-color: #ffd344; -fx-border-radius: 15;" text="Supprimer">
+      <Button layoutX="632.0" layoutY="383.0" mnemonicParsing="false" onAction="#tosuppuser" prefHeight="32.0" prefWidth="101.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Supprimer">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button layoutX="635.0" layoutY="368.0" mnemonicParsing="false" onAction="#toModU" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Modifier">
+      <Button layoutX="632.0" layoutY="331.0" mnemonicParsing="false" onAction="#toModU" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Modifier">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
+      <Button layoutX="419.0" layoutY="185.0" mnemonicParsing="false" onAction="#chercher" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="CHERCHER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="Idcher" layoutX="542.0" layoutY="185.0" style="-fx-background-radius: 15;" />
+      <Button layoutX="632.0" layoutY="275.0" mnemonicParsing="false" onAction="#toAj" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

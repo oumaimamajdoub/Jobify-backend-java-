@@ -8,6 +8,7 @@ package edu.esprit.services;
 
 
 import edu.esprit.entities.candidate;
+import edu.esprit.entities.entrepreneur;
 import edu.esprit.utils.MyConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -114,6 +115,32 @@ public class candidateCRUD {
                 
             }
             
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return myList;
+    }
+    
+    public List<candidate> affichercandidatebyId(int id) {
+        List<candidate> myList = new ArrayList<candidate>();
+        try {
+            String requete4 = "SELECT * FROM user where id=" + id + " AND Role='candidate'";
+            Statement st = new MyConnection().getCnx().createStatement();
+            ResultSet rs = st.executeQuery(requete4);
+            while (rs.next()) {
+                candidate fp = new candidate();
+                fp.setId(rs.getInt(1));
+                fp.setAge(rs.getInt(2));
+                fp.setNom(rs.getString("nom"));
+                fp.setPrenom(rs.getString("prenom"));
+                fp.setEmail(rs.getString("email"));
+                fp.setMdp(rs.getString("mdp"));
+                fp.setNumTel(rs.getString("numTel"));
+                fp.setAdresse(rs.getString("Adresse"));
+                myList.add(fp);
+
+            }
+            return myList;
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }

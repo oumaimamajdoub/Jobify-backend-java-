@@ -7,6 +7,7 @@ package edu.esprit.gui;
 
 import edu.esprit.entities.User;
 import edu.esprit.entities.candidate;
+import edu.esprit.entities.entrepreneur;
 import edu.esprit.services.candidateCRUD;
 import edu.esprit.services.userCRUD;
 import java.io.IOException;
@@ -22,6 +23,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import org.controlsfx.control.Notifications;
@@ -49,6 +51,8 @@ public class HomeCController implements Initializable {
     private TableColumn<candidate, String> caddc;
     @FXML
     private TableColumn<candidate, String> cnumtelc;
+    @FXML
+    private TextField idchercher;
 
     /**
      * Initializes the controller class.
@@ -121,5 +125,25 @@ public class HomeCController implements Initializable {
         } catch (IOException ex) {
             System.out.print(ex.getMessage());
         
-        }}}
+        }}
+
+    @FXML
+    private void cher(ActionEvent event) {
+        int id =Integer.parseInt(idchercher.getText()) ;
+         tab.getItems().clear();
+         candidateCRUD ec = new candidateCRUD();
+         List<candidate> fs = ec.affichercandidatebyId(id);
+        fs.forEach(e -> oblist.add(e));
+        System.out.println(oblist);
+        cnomc.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        cprenomc.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+        cagec.setCellValueFactory(new PropertyValueFactory<>("age"));
+        cemailc.setCellValueFactory(new PropertyValueFactory<>("email"));
+        cmdpc.setCellValueFactory(new PropertyValueFactory<>("mdp"));
+        cnumtelc.setCellValueFactory(new PropertyValueFactory<>("numTel"));
+        caddc.setCellValueFactory(new PropertyValueFactory<>("Adresse"));
+
+        tab.setItems(oblist);
+    }
+}
 

@@ -20,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -51,6 +52,8 @@ public class HomeUController implements Initializable {
     private TableColumn<User, String> cadd;
     @FXML
     private TableColumn<User, String> crole;
+    @FXML
+    private TextField Idcher;
 
     /**
      * Initializes the controller class.
@@ -85,7 +88,7 @@ public class HomeUController implements Initializable {
 
     @FXML
     private void getdatauser(MouseEvent event) {
-        int index = tab.getSelectionModel().getSelectedIndex();
+        int index = tab.getSelectionModel().getSelectedIndex(); 
         uu.setEmail(cemail.getCellData(index));
         uu.setAdresse(cadd.getCellData(index));
         uu.setNumTel(cnumtel.getCellData(index));
@@ -123,6 +126,39 @@ public class HomeUController implements Initializable {
             auc.setmadd(uu.getAdresse());
             auc.setmrole(uu.getRole());
             //auc.setMail(uu.getEmail());
+            
+            tab.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.print(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void chercher(ActionEvent event) {
+         int id =Integer.parseInt(Idcher.getText()) ;
+         tab.getItems().clear();
+         List<User> fs = us.afficherUserbyId(id);
+        fs.forEach(e -> oblist.add(e));
+        System.out.println(oblist);
+        cnom.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        cprenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+        cage.setCellValueFactory(new PropertyValueFactory<>("age"));
+        cemail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        cmdp.setCellValueFactory(new PropertyValueFactory<>("mdp"));
+        cnumtel.setCellValueFactory(new PropertyValueFactory<>("numTel"));
+        cadd.setCellValueFactory(new PropertyValueFactory<>("Adresse"));
+        crole.setCellValueFactory(new PropertyValueFactory<>("Role"));
+
+        tab.setItems(oblist);
+    }
+
+    @FXML
+    private void toAj(ActionEvent event) {
+        FXMLLoader loader =
+                new FXMLLoader(getClass().getResource("AjouterUser.fxml"));
+        try {
+            Parent root = loader.load();
+           
             
             tab.getScene().setRoot(root);
         } catch (IOException ex) {

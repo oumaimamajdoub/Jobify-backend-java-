@@ -6,7 +6,9 @@
 package edu.esprit.gui;
 
 import edu.esprit.entities.admin;
+import edu.esprit.entities.candidate;
 import edu.esprit.services.adminCRUD;
+import edu.esprit.services.candidateCRUD;
 import java.io.IOException;
 import java.net.URL;
 import static java.time.zone.ZoneRulesProvider.refresh;
@@ -22,6 +24,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -48,6 +51,8 @@ public class HomeAController implements Initializable {
     private Button butSupp;
     @FXML
     private TableView<admin> tab;
+    @FXML
+    private TextField idCher;
 
     /**
      * Initializes the controller class.
@@ -111,4 +116,20 @@ public class HomeAController implements Initializable {
                     .showInformation();
     
     }
+
+    @FXML
+    private void cher(ActionEvent event) {
+        int id =Integer.parseInt(idCher.getText()) ;
+         tab.getItems().clear();
+         adminCRUD ec = new adminCRUD();
+         List<admin> fs = ec.afficheradminbyId(id);
+        fs.forEach(e -> oblist.add(e));
+        System.out.println(oblist);
+        cidadmin.setCellValueFactory(new PropertyValueFactory<>("id"));
+        cemailadmin.setCellValueFactory(new PropertyValueFactory<>("email"));
+        cmdpadmin.setCellValueFactory(new PropertyValueFactory<>("mdp"));
+
+        tab.setItems(oblist);
+    }
+    
 }

@@ -22,12 +22,13 @@ import java.util.logging.Logger;
  * @author LENOVO
  */
 public class entrepreneurCRUD {
-     public void ajouterentrepreneur(entrepreneur fp){
+
+    public void ajouterentrepreneur(entrepreneur fp) {
         try {
             String requete1 = "INSERT INTO user (nom,email,mdp,numTel,Adresse,Role)"
                     + "VALUES (?,?,?,?,?,'entrepreneur')";
             PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete1);
-            
+
             pst.setString(1, fp.getNom());
             pst.setString(2, fp.getEmail());
             pst.setString(3, fp.getMdp());
@@ -35,15 +36,15 @@ public class entrepreneurCRUD {
             pst.setString(5, fp.getAdresse());
             pst.executeUpdate();
             System.out.println("entrepreneur ajouté avec succés! ");
-            
-            
+
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
- 
+
     }
-     public void supprimerentrepreneurByEmail(String email){
-        
+
+    public void supprimerentrepreneurByEmail(String email) {
+
         try {
             String requete2 = "DELETE FROM user WHERE email =?";
             PreparedStatement st = new MyConnection().getCnx().prepareStatement(requete2);
@@ -54,8 +55,9 @@ public class entrepreneurCRUD {
             System.err.println(ex.getMessage());
         }
     }
-    public void supprimerentrepreneur(int id){
-        
+
+    public void supprimerentrepreneur(int id) {
+
         try {
             String requete2 = "DELETE FROM user WHERE id =?";
             PreparedStatement st = new MyConnection().getCnx().prepareStatement(requete2);
@@ -66,14 +68,14 @@ public class entrepreneurCRUD {
             System.err.println(ex.getMessage());
         }
     }
-    
+
     /**
      *
      * @param fp
      * @param fp1
      */
-    public void modifierentrepreneur(String a, entrepreneur fp){
-        
+    public void modifierentrepreneur(String a, entrepreneur fp) {
+
         try {
             String requete3 = " UPDATE `user` SET `nom`=?,`email`=?,`mdp`=?,`numTel`=?,`Adresse`=? WHERE email=?";
             PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete3);
@@ -85,19 +87,19 @@ public class entrepreneurCRUD {
             pst.setString(6, a);
             pst.executeUpdate();
             System.out.println("entrepreneur modifiée avec succès!");
-            
+
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
     }
-    
-    public List<entrepreneur> afficherentrepreneur(){
+
+    public List<entrepreneur> afficherentrepreneur() {
         List<entrepreneur> myList = new ArrayList<entrepreneur>();
-        try {  
+        try {
             String requete4 = "SELECT * FROM user";
             Statement st = new MyConnection().getCnx().createStatement();
             ResultSet rs = st.executeQuery(requete4);
-            while(rs.next()){
+            while (rs.next()) {
                 entrepreneur fp = new entrepreneur();
                 fp.setId(rs.getInt(1));
                 fp.setNom(rs.getString("nom"));
@@ -107,9 +109,9 @@ public class entrepreneurCRUD {
                 fp.setAdresse(rs.getString("Adresse"));
                 fp.setRole(rs.getString("Role"));
                 myList.add(fp);
-                
+
             }
-            
+
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
@@ -120,6 +122,28 @@ public class entrepreneurCRUD {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
- 
+    public List<entrepreneur> afficherentrepreneurbyId(int id) {
+        List<entrepreneur> myList = new ArrayList<entrepreneur>();
+        try {
+            String requete4 = "SELECT * FROM user where id=" + id + " AND Role='entepreneur'";
+            Statement st = new MyConnection().getCnx().createStatement();
+            ResultSet rs = st.executeQuery(requete4);
+            while (rs.next()) {
+                entrepreneur fp = new entrepreneur();
+                fp.setId(rs.getInt(1));
+                fp.setNom(rs.getString("nom"));
+                fp.setEmail(rs.getString("email"));
+                fp.setMdp(rs.getString("mdp"));
+                fp.setNumTel(rs.getString("numTel"));
+                fp.setAdresse(rs.getString("Adresse"));
+                myList.add(fp);
+
+            }
+            return myList;
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return myList;
+    }
+
 }

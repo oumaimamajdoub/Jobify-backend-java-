@@ -121,7 +121,7 @@ public class userCRUD {
     }
     
     
-    public User afficherUserbyId(int id){
+    public List<User> afficherUserbyId(int id){
         List<User> myList = new ArrayList<User>();
         try {  
             String requete4 = "SELECT * FROM user where id="+id;
@@ -138,14 +138,14 @@ public class userCRUD {
                 fp.setNumTel(rs.getString("numTel"));
                 fp.setAdresse(rs.getString("Adresse"));
                 fp.setEtat(rs.getString("Role"));
-                return fp;
+                myList.add(fp);
                 
             }
-            
+            return myList;
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-        return null;
+        return myList;
     }
     /**
      *

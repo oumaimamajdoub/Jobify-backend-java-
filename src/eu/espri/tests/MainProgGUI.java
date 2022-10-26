@@ -38,9 +38,9 @@ public class MainProgGUI extends Application {
      */
     public static void main(String[] args) {
         //launch(args);
-        userCRUD us = new userCRUD();
+        /*userCRUD us = new userCRUD();
         User u = us.afficherUserbyId(23);
-        System.out.println(u.toString());
+        System.out.println(u.toString());*/
     }
     
 }

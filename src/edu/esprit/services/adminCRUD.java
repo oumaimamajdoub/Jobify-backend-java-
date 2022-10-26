@@ -8,6 +8,7 @@ package edu.esprit.services;
 
 import edu.esprit.entities.User;
 import edu.esprit.entities.admin;
+import edu.esprit.entities.candidate;
 import edu.esprit.utils.MyConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -96,5 +97,26 @@ public class adminCRUD {
         return myList;
     }
 
+    public List<admin> afficheradminbyId(int id) {
+        List<admin> myList = new ArrayList<admin>();
+        try {
+            String requete4 = "SELECT * FROM user where id=" + id + " AND Role='admin'";
+            Statement st = new MyConnection().getCnx().createStatement();
+            ResultSet rs = st.executeQuery(requete4);
+            while (rs.next()) {
+                admin fp = new admin();
+                fp.setId(rs.getInt(1));
+                fp.setEmail(rs.getString("email"));
+                fp.setMdp(rs.getString("mdp"));
+                myList.add(fp);
+
+            }
+            return myList;
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return myList;
+    }
+    
     
 }
