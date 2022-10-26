@@ -64,16 +64,16 @@ public class AjouterentrepController implements Initializable {
         ec.ajouterentrepreneur(e);
 
         FXMLLoader loader
-                = new FXMLLoader(getClass().getResource("AfficherE.fxml"));
+                = new FXMLLoader(getClass().getResource("HomeE.fxml"));
         try {
             Parent root = loader.load();
 
-            AfficherEController acc = loader.getController();
+            /*AfficherEController acc = loader.getController();
             acc.setTfnom(e.getNom());
             acc.setTfemail(e.getEmail());
             acc.setTfmdp(e.getMdp());
             acc.setTfnumTel(e.getNumTel());
-            acc.setTfAdresse(e.getAdresse());
+            acc.setTfAdresse(e.getAdresse());*/
 
             tfnom.getScene().setRoot(root);
 

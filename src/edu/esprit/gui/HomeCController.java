@@ -145,5 +145,19 @@ public class HomeCController implements Initializable {
 
         tab.setItems(oblist);
     }
+
+    @FXML
+    private void AJOUTERC(ActionEvent event) {
+        FXMLLoader loader =
+                new FXMLLoader(getClass().getResource("Ajoutercandidate.fxml"));
+        try {
+            Parent root = loader.load();
+           
+            
+            tab.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.print(ex.getMessage());
+        }
+    }
 }
 

@@ -41,5 +41,10 @@
          </font>
       </Button>
       <TextField fx:id="idchercher" layoutX="51.0" layoutY="218.0" />
+      <Button layoutX="600.0" layoutY="296.0" mnemonicParsing="false" onAction="#AJOUTERC" prefHeight="31.0" prefWidth="118.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

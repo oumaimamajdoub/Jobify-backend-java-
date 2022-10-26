@@ -52,13 +52,13 @@ public class AjouteradminController implements Initializable {
         ac.ajouteradmin(a);
         
         FXMLLoader loader =
-                new FXMLLoader(getClass().getResource("AfficherAdmin.fxml"));
+                new FXMLLoader(getClass().getResource("HomeA.fxml"));
         try {
             Parent root = loader.load();
-            AfficherAdminController aac= loader.getController();
+           /* AfficherAdminController aac= loader.getController();
             
             aac.setTfemail(a.getEmail());
-            aac.setTfmdp(a.getMdp());
+            aac.setTfmdp(a.getMdp());*/
             
             tfmdp.getScene().setRoot(root);
         } catch (IOException ex) {

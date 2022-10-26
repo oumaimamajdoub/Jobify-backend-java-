@@ -53,6 +53,8 @@ public class HomeEController implements Initializable {
     private Button butmodif;
     @FXML
     private TextField idchercher;
+    @FXML
+    private Button ajouterentrep;
 
     /**
      * Initializes the controller class.
@@ -137,6 +139,20 @@ public class HomeEController implements Initializable {
         cadde.setCellValueFactory(new PropertyValueFactory<>("Adresse"));
 
         tab.setItems(oblist);
+    }
+
+    @FXML
+    private void toaddentrep(ActionEvent event) {
+          FXMLLoader loader =
+                new FXMLLoader(getClass().getResource("Ajouterentrep.fxml"));
+        try {
+            Parent root = loader.load();
+           
+            
+            tab.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.print(ex.getMessage());
+        }
     }
 
 

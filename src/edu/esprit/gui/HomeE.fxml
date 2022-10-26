@@ -39,6 +39,11 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
+      <Button fx:id="ajouterentrep" layoutX="459.0" layoutY="238.0" mnemonicParsing="false" onAction="#toaddentrep" prefHeight="43.0" prefWidth="104.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
          
    </children>
 </AnchorPane>

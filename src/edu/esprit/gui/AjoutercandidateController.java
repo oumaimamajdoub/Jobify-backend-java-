@@ -70,18 +70,18 @@ public class AjoutercandidateController implements Initializable {
         cc.ajoutercandidate(c);
 
         FXMLLoader loader
-                = new FXMLLoader(getClass().getResource("Affichercandidate.fxml"));
+                = new FXMLLoader(getClass().getResource("HomeC.fxml"));
         try {
             Parent root = loader.load();
 
-            AffichercandidateController acc = loader.getController();
+            /*AffichercandidateController acc = loader.getController();
             acc.setTfnom(c.getNom());
             acc.setTfprenom(c.getPrenom());
             acc.setTfemail(c.getEmail());
             acc.setTfage("" + c.getAge());
             acc.setTfmdp(c.getMdp());
             acc.setTfnumTel(c.getNumTel());
-            acc.setTfAdresse(c.getAdresse());
+            acc.setTfAdresse(c.getAdresse());*/
 
             tfnom.getScene().setRoot(root);
 

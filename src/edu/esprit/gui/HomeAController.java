@@ -53,6 +53,8 @@ public class HomeAController implements Initializable {
     private TableView<admin> tab;
     @FXML
     private TextField idCher;
+    @FXML
+    private Button AJOUTERA;
 
     /**
      * Initializes the controller class.
@@ -130,6 +132,20 @@ public class HomeAController implements Initializable {
         cmdpadmin.setCellValueFactory(new PropertyValueFactory<>("mdp"));
 
         tab.setItems(oblist);
+    }
+
+    @FXML
+    private void toadda(ActionEvent event) {
+         FXMLLoader loader =
+                new FXMLLoader(getClass().getResource("Ajouteradmin.fxml"));
+        try {
+            Parent root = loader.load();
+           
+            
+            tab.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.print(ex.getMessage());
+        }
     }
     
 }
