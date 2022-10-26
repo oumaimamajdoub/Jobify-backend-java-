@@ -24,6 +24,7 @@ import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -101,6 +102,9 @@ public class HomeUController implements Initializable {
         us.supprimeruserByEmail(uu.getEmail());
         tab.getItems().clear();
         loadTableUser();
+        Notifications.create().title("NOTIFICATIONS")
+                    .text("user supprimer")
+                    .showInformation();
     }
 
     @FXML

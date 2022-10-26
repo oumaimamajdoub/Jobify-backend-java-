@@ -5,6 +5,8 @@
  */
 package eu.espri.tests;
 
+import edu.esprit.entities.User;
+import edu.esprit.services.userCRUD;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -35,7 +37,10 @@ public class MainProgGUI extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
+        //launch(args);
+        userCRUD us = new userCRUD();
+        User u = us.afficherUserbyId(23);
+        System.out.println(u.toString());
     }
     
 }

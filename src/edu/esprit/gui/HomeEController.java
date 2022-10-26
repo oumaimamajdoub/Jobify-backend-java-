@@ -27,6 +27,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -95,7 +96,11 @@ public class HomeEController implements Initializable {
         us.supprimerentrepreneurByEmail(ee.getEmail());
         tab.getItems().clear();
         loadTableentrepreneur();
+          Notifications.create().title("NOTIFICATIONS")
+                    .text("Entrepreneur supprimer")
+                    .showInformation();
     }
+    
 
     @FXML
     private void tomodif(ActionEvent event) {

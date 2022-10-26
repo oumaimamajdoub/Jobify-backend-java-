@@ -24,6 +24,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -93,8 +94,12 @@ public class HomeCController implements Initializable {
         us.supprimercandidateByEmail(ca.getEmail());
         tab.getItems().clear();
         loadTableCandidate();
-        
+          Notifications.create().title("NOTIFICATIONS")
+                    .text("Candidat supprimer")
+                    .showInformation();
     }
+        
+    
 
     @FXML
     private void ModC(ActionEvent event) {
@@ -115,6 +120,6 @@ public class HomeCController implements Initializable {
             tab.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.print(ex.getMessage());
-        }
-    }
-}
+        
+        }}}
+

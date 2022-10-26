@@ -25,6 +25,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -105,5 +106,9 @@ public class HomeAController implements Initializable {
         us.supprimeradmin(ad.getId());
         tab.getItems().clear();
         loadTableAdmin();
+          Notifications.create().title("NOTIFICATIONS")
+                    .text("user supprimer")
+                    .showInformation();
+    
     }
 }

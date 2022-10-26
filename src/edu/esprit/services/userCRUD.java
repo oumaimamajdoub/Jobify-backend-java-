@@ -120,6 +120,33 @@ public class userCRUD {
         return myList;
     }
     
+    
+    public User afficherUserbyId(int id){
+        List<User> myList = new ArrayList<User>();
+        try {  
+            String requete4 = "SELECT * FROM user where id="+id;
+            Statement st = new MyConnection().getCnx().createStatement();
+            ResultSet rs = st.executeQuery(requete4);
+            while(rs.next()){
+                User fp = new User();
+                fp.setId(rs.getInt(1));
+                fp.setAge(rs.getInt(2));
+                fp.setNom(rs.getString("nom"));
+                fp.setPrenom(rs.getString("prenom"));
+                fp.setEmail(rs.getString("email"));
+                fp.setMdp(rs.getString("mdp"));
+                fp.setNumTel(rs.getString("numTel"));
+                fp.setAdresse(rs.getString("Adresse"));
+                fp.setEtat(rs.getString("Role"));
+                return fp;
+                
+            }
+            
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return null;
+    }
     /**
      *
      * @param id
