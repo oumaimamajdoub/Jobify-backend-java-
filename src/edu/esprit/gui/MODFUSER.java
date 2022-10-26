@@ -32,7 +32,7 @@ public class MODFUSER extends Application {
         } catch (IOException ex) {
             Logger.getLogger(MODFUSER.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Scene scene = new Scene(root, 300, 250);
+        Scene scene = new Scene(root);
         
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);

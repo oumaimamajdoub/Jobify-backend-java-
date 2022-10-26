@@ -32,7 +32,7 @@ public class MODENTREPRENEUR extends Application {
         } catch (IOException ex) {
             Logger.getLogger(MODENTREPRENEUR.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Scene scene = new Scene(root, 300, 250);
+        Scene scene = new Scene(root);
         
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
