@@ -19,7 +19,7 @@ public class Myconnection {
     private Connection cnx;
     private static Myconnection instance;
     
-    private Myconnection() {
+    public Myconnection() {
         try {
             cnx = DriverManager.getConnection(url, username, password);
             System.out.println("database connected");

@@ -29,11 +29,6 @@ public class Participant {
         this.id_ev = id_ev;
         this.id_user = id_user;
     }
-
-   
-
-  
-
     public int getId_pr() {
         return id_pr;
     }

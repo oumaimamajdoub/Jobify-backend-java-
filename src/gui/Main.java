@@ -15,27 +15,28 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import services.Service_participants;
 
 /**
  *
  * @author LENOVO
  */
 public class Main extends Application {
-    
+
     @Override
     public void start(Stage primaryStage) throws IOException {
-        
-        try{
-            Parent root = FXMLLoader.load(getClass().getResource("Evenement.fxml"));
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("Evenement.fxml"));//listeevenementfrontoffice
             Scene scene = new Scene(root);
-        
-        primaryStage.setTitle("Evenement");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        } catch(IOException ex){
+
+            primaryStage.setTitle("Evenement");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException ex) {
             System.err.println(ex.getMessage());
         }
-        
+
     }
 
     /**
@@ -43,6 +44,8 @@ public class Main extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+        Service_participants pr = new Service_participants();
+        System.out.println(pr.afficher());
     }
-    
+
 }

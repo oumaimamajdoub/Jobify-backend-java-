@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import utils.Myconnection;
 
 /**
@@ -40,7 +42,7 @@ String req = "INSERT INTO `participant`(`id_ev`,`id_user`) VALUES (?,?)";
             pste.setInt(1,p.getId_ev());
             pste.setInt(2,p.getId_user());
            
-            pste.execute();
+            pste.executeUpdate();
             System.out.println("participants ajouter");
         } catch (SQLException ex) {
          Logger.getLogger(Service_participants.class.getName()).log(Level.SEVERE, null, ex);        }   
@@ -78,8 +80,9 @@ String req = "INSERT INTO `participant`(`id_ev`,`id_user`) VALUES (?,?)";
            // Logger.getLogger(Service_evenement.class.getName()).log(Level.SEVERE, null, ex);
         }
  }
- public List<Participant> afficher() {
-    List<Participant> Participant = new ArrayList<>();
+ public ObservableList<Participant> afficher() {
+
+    ObservableList<Participant> Participant = FXCollections.observableArrayList();
         String req = "SELECT * FROM `Participant`";
         
         try {

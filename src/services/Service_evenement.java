@@ -6,7 +6,18 @@
 package services;
 
 
+import com.itextpdf.text.BadElementException;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfWriter;
 import entities.Evenement;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,6 +27,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import utils.Myconnection;
 
 /**
@@ -27,13 +41,13 @@ public class Service_evenement {
     private Statement ste;
     private PreparedStatement pste;
     
-     public Service_evenement () {
+     public  Service_evenement () {
      conn = Myconnection.getInstance().getCnx();   
     }
      
 
     public void ajouter(Evenement ev) {
-String req = "INSERT INTO `evenement`(`id_ev`,`nom_ev`,`date_debut_ev`,`date_fin_ev`,`organisateur_ev`,`lieu_ev`,`disponibilite_ev`,`programme_ev`,`num_contact`) VALUES (?,?,?,?,?,?,?,?,?)";
+String req = "INSERT INTO `evenement`(`id_ev`,`nom_ev`,`date_debut_ev`,`date_fin_ev`,`organisateur_ev`,`lieu_ev`,`disponibilite_ev`,`programme_ev`,`num_contact`, `user_ID`,'par_numb') VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         try {
                
             pste = conn.prepareStatement(req);
@@ -46,7 +60,8 @@ String req = "INSERT INTO `evenement`(`id_ev`,`nom_ev`,`date_debut_ev`,`date_fin
             pste.setString(7, ev.getDisponibilite_ev());
             pste.setString(8, ev.getProgramme_ev());
             pste.setInt(9, ev.getNum_contact());
-        
+            pste.setLong(10, ev.getUserID());
+            pste.setInt(11, ev.getParNumb());
            
             pste.execute();
             System.out.println("Evenement créée");
@@ -56,11 +71,10 @@ String req = "INSERT INTO `evenement`(`id_ev`,`nom_ev`,`date_debut_ev`,`date_fin
     }
    
     public void modifierev(Evenement ev) {
-        String req = "UPDATE evenement SET  nom_ev=? ,date_debut_ev=?,date_fin_ev=?,organisateur_ev=?,lieu_ev=?,disponibilite_ev=?,programme_ev=?,num_contact=? WHERE id_ev=?";
+        String req = "UPDATE evenement SET  nom_ev=? ,date_debut_ev=?,date_fin_ev=?,organisateur_ev=?,lieu_ev=?,disponibilite_ev=?,programme_ev=?,num_contact=?,par_numb=? WHERE id_ev=?";
     try {
-            //pste = conn.prepareStatement(req);
             pste = conn.prepareStatement(req);
-            pste.setInt(9,ev.getId_ev());
+            pste.setInt(10,ev.getId_ev());
             pste.setString(1, ev.getNom_ev());
             pste.setString(2, ev.getDate_debut_ev());
             pste.setString(3, ev.getDate_fin_ev());
@@ -69,6 +83,7 @@ String req = "INSERT INTO `evenement`(`id_ev`,`nom_ev`,`date_debut_ev`,`date_fin
             pste.setString(6, ev.getDisponibilite_ev());
             pste.setString(7, ev.getProgramme_ev());
             pste.setInt(8, ev.getNum_contact()); 
+             pste.setInt(9, ev.getParNumb()); 
             
            pste.executeUpdate();
          /**  int rowsUpdated = pste.executeUpdate();
@@ -82,7 +97,7 @@ String req = "INSERT INTO `evenement`(`id_ev`,`nom_ev`,`date_debut_ev`,`date_fin
     
  public void Supprimer(Evenement ev) {
     try {
-            String req = "DELETE FROM `evenement` WHERE `id_ev` = "+ ev.getId_ev()+ "";
+            String req = "DELETE FROM `evenement` WHERE `id_ev` = "+ ev.getId_ev();
             pste = conn.prepareStatement(req);
             pste.executeUpdate();
             System.out.println("evenement supprimé");
@@ -94,8 +109,8 @@ String req = "INSERT INTO `evenement`(`id_ev`,`nom_ev`,`date_debut_ev`,`date_fin
 
   
 
-    public List<Evenement> afficher() {
-    List<Evenement> Evenement = new ArrayList<>();
+    public ObservableList<Evenement> afficher() {
+    ObservableList<Evenement> Evenement = FXCollections.observableArrayList();
         String req = "SELECT * FROM `Evenement`";
         
         try {
@@ -114,6 +129,9 @@ String req = "INSERT INTO `evenement`(`id_ev`,`nom_ev`,`date_debut_ev`,`date_fin
                 ev.setDisponibilite_ev(resultSet.getString(7));
                 ev.setProgramme_ev(resultSet.getString(8));
                 ev.setNum_contact(resultSet.getInt(9));
+                ev.setParNumb(resultSet.getInt(11));
+      
+               
                 Evenement.add(ev);
             }
             
@@ -122,6 +140,28 @@ String req = "INSERT INTO `evenement`(`id_ev`,`nom_ev`,`date_debut_ev`,`date_fin
         }
         return Evenement;
     }
+    
+    public int getTotal(long u) {
+    ObservableList<Evenement> Evenement = FXCollections.observableArrayList();
+        String req = "SELECT count(*) as total FROM `evenement` where user_ID="+u;
+        
+        try {
+            
+            ste = conn.createStatement();
+            ResultSet resultSet = ste.executeQuery(req);
+            int x =0 ;
+            while(resultSet.next()){
+                Evenement ev = new Evenement();
+                x = resultSet.getInt("total");
+            }
+            return x;
+        } catch (SQLException ex) {
+            Logger.getLogger(Service_evenement.class.getName()).log(Level.SEVERE, null, ex);     
+        }
+        return 0;
+    }
+    
+
    
     }
  
