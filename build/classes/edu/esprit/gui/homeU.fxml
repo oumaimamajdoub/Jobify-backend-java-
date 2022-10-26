@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.HomeUController">
+<AnchorPane id="AnchorPane" prefHeight="752.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.HomeUController">
    <children>
-      <TableView fx:id="tab" layoutX="29.0" layoutY="172.0" onMouseClicked="#getdatauser" prefHeight="380.0" prefWidth="596.0">
+      <ImageView fitHeight="755.0" fitWidth="897.0" layoutX="-4.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../edu3/esprit/img/Yellow%20We%20Are%20Hiring.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tab" layoutX="14.0" layoutY="276.0" onMouseClicked="#getdatauser" prefHeight="380.0" prefWidth="596.0">
         <columns>
           <TableColumn fx:id="cnom" prefWidth="75.0" text="Nom" />
           <TableColumn fx:id="cprenom" prefWidth="75.0" text="Prenom" />
@@ -20,8 +27,13 @@
             <TableColumn fx:id="crole" prefWidth="75.0" text="Role" />
         </columns>
       </TableView>
-      <Button layoutX="685.0" layoutY="313.0" mnemonicParsing="false" onAction="#tosuppuser" prefHeight="32.0" prefWidth="101.0" text="supp" />
-      <Button layoutX="685.0" layoutY="259.0" mnemonicParsing="false" onAction="#toModU" prefHeight="31.0" prefWidth="101.0" text="Modifier" />
-      <Label layoutX="493.0" layoutY="48.0" text="Chercher" />
+      <Button layoutX="635.0" layoutY="434.0" mnemonicParsing="false" onAction="#tosuppuser" prefHeight="32.0" prefWidth="101.0" style="-fx-background-color: #ffd344; -fx-border-radius: 15;" text="Supprimer">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="635.0" layoutY="368.0" mnemonicParsing="false" onAction="#toModU" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Modifier">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
    </children>
 </AnchorPane>
