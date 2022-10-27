@@ -3,17 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/services/userCRUD.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/entities/User.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/services/adminCRUD.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/gui/FirstWindow.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/eu/espri/tests/myList.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/services/candidateCRUD.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/gui/AjouterUser.fxml</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/utils/MyConnection.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/services/entrepreneurCRUD.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/eu/espri/tests/MainClass.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/4se4/src/edu/esprit/gui/AjouterUserController.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/inscription.fxml</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/SupprimerNetwork.fxml</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/entities/Network.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/test/Test.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/SupprimerProfil.fxml</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/MainController.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/InscriptionController.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/AjouterNetwork.fxml</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/User.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/ModifierProfil.fxml</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/AjouterNetworkController.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/SupprimerProfilController.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/Main.fxml</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/entities/Profil.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/Firstwindow.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/AffichageProfilController.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/ModifierProfilController.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/SupprimerNetworkController.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/testapplication/AffichageProfil.fxml</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/outils/MyDB.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/services/ProfilCRUD.java</file>
+            <file>file:/C:/Users/Ismail/Documents/NetBeansProjects/4se4/src/services/NetworkCRUD.java</file>
         </group>
     </open-files>
 </project-private>
