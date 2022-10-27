@@ -317,6 +317,10 @@ public class EvenementController implements Initializable {
          doc.add(new Paragraph(new Phrase(tfdd.getText(),FontFactory.getFont("Arial",10))));
           doc.add(new Paragraph (new Phrase("Date_fin :",FontFactory.getFont("Arial",12))));
          doc.add(new Paragraph(new Phrase(tfdf.getText(),FontFactory.getFont("Arial",10))));
+         doc.add(new Paragraph(new Phrase(pdfButton.getText(),FontFactory.getFont("Arial",10))));
+                   doc.add(new Paragraph (new Phrase("Numbre de Place:",FontFactory.getFont("Arial",12))));
+
+
          doc.add(new Paragraph("*****************************************************"));
          doc.add(new Paragraph (new Phrase("A bientot! ",FontFactory.getFont("Arial",10,YELLOW))));
          doc.close();
