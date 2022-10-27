@@ -20,7 +20,7 @@
             <Image url="@../../../projet_pi_dev/src/edu1/esprit/img/Yellow%20Modern%20We%20Are%20Hiring.png" />
          </image>
       </ImageView>
-      <VBox layoutX="14.0" layoutY="38.0" prefHeight="477.0" prefWidth="132.0" spacing="40.0">
+      <VBox layoutX="15.0" layoutY="76.0" prefHeight="477.0" prefWidth="132.0" spacing="40.0">
          <children>
             <Label text="Nom" />
             <Label text="Organisateur : " />
@@ -33,7 +33,7 @@
             <Label text="Number de Place" />
          </children>
       </VBox>
-      <VBox layoutX="159.0" layoutY="33.0" prefHeight="515.0" prefWidth="273.0" spacing="30.0">
+      <VBox layoutX="175.0" layoutY="76.0" prefHeight="515.0" prefWidth="273.0" spacing="30.0">
          <children>
             <TextField fx:id="tfnom" prefHeight="17.0" prefWidth="273.0" />
             <TextField fx:id="tforganisateur" />
@@ -49,7 +49,7 @@
       <Button fx:id="ajout_souha" layoutX="23.0" layoutY="602.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="49.0" prefWidth="116.0" text="Ajouter" />
       <Button fx:id="modifier_souha" layoutX="170.0" layoutY="602.0" mnemonicParsing="false" onAction="#modifier" prefHeight="49.0" prefWidth="116.0" text="Modifier" />
       <Button fx:id="supprimer_souha" layoutX="311.0" layoutY="602.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="49.0" prefWidth="116.0" text="Supprimer" />
-      <TableView fx:id="tfevenement" layoutX="494.0" layoutY="88.0" onMousePressed="#index3" prefHeight="383.0" prefWidth="826.0">
+      <TableView fx:id="tfevenement" layoutX="460.0" layoutY="88.0" onMousePressed="#index3" prefHeight="383.0" prefWidth="826.0">
         <columns>
           <TableColumn fx:id="colnom" minWidth="1.0" text="Nom" />
           <TableColumn fx:id="colorganisateur" prefWidth="111.0" text="Organisaateur" />
@@ -62,7 +62,7 @@
             <TableColumn fx:id="coldf" prefWidth="127.0" text="Date_fin" />
         </columns>
       </TableView>
-      <Label fx:id="evenement" alignment="TOP_RIGHT" cache="true" cacheHint="SCALE" contentDisplay="RIGHT" depthTest="ENABLE" graphicTextGap="10.0" layoutX="460.0" layoutY="24.0" mnemonicParsing="true" prefHeight="18.0" prefWidth="400.0" text="EVENEMENT " textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+      <Label fx:id="evenement" alignment="TOP_RIGHT" cache="true" cacheHint="SCALE" contentDisplay="RIGHT" depthTest="ENABLE" graphicTextGap="10.0" layoutX="460.0" layoutY="24.0" mnemonicParsing="true" prefHeight="18.0" prefWidth="400.0" text="Evenement" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
          <effect>
             <Lighting bumpInput="$null">
                <light>
@@ -75,12 +75,12 @@
          </cursor>
       </Label>
       <Label fx:id="tfid" graphicTextGap="10.0" layoutX="199.0" layoutY="573.0" prefHeight="18.0" prefWidth="142.0" style="-fx-text-fill: transparent;" textFill="WHITE" textOverrun="WORD_ELLIPSIS" />
-      <Button layoutX="946.0" layoutY="626.0" mnemonicParsing="false" onAction="#parti" prefHeight="49.0" prefWidth="142.0" text="Participant" />
+      <Button layoutX="1168.0" layoutY="810.0" mnemonicParsing="false" onAction="#parti" prefHeight="49.0" prefWidth="142.0" text="Participant" />
       <Button layoutX="9.0" layoutY="720.0" mnemonicParsing="false" onAction="#total" prefHeight="49.0" prefWidth="143.0" text="Nombre_Evenement :" />
       <TextField fx:id="affTotal" layoutX="217.0" layoutY="720.0" prefHeight="49.0" prefWidth="152.0" />
       
       <TextField fx:id="a_pic" layoutX="217.0" layoutY="785.0" prefHeight="49.0" prefWidth="152.0" />
-      <Button fx:id="pdfButton" layoutX="1191.0" layoutY="744.0" mnemonicParsing="false" onAction="#ExporterPdf" prefHeight="65.0" prefWidth="102.0" text="Exporter pdf" />
+      <Button fx:id="pdfButton" layoutX="1188.0" layoutY="712.0" mnemonicParsing="false" onAction="#ExporterPdf" prefHeight="65.0" prefWidth="102.0" text="Exporter pdf" />
       <Button fx:id="B_import" layoutX="34.0" layoutY="809.0" mnemonicParsing="false" onAction="#h_importpath" prefHeight="32.0" prefWidth="68.0" text="import" />
       <ImageView fx:id="a_picture_kol" fitHeight="142.0" fitWidth="151.0" layoutX="432.0" layoutY="706.0" onDragDetected="#Import" pickOnBounds="true" preserveRatio="true" />
    </children>

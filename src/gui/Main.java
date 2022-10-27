@@ -27,7 +27,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("Evenement.fxml"));//listeevenementfrontoffice
+            Parent root = FXMLLoader.load(getClass().getResource("listeevenementfrontoffice.fxml"));//listeevenementfrontoffice
             Scene scene = new Scene(root);
 
             primaryStage.setTitle("Evenement");

@@ -6,49 +6,59 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="842.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ParticipentController">
    <children>
-      <VBox layoutX="14.0" layoutY="197.0" prefHeight="196.0" prefWidth="132.0" spacing="40.0">
+      <ImageView fitHeight="700.0" fitWidth="800.0" layoutX="750.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" x="-50.0">
+         <image>
+            <Image url="@../edu1/esprit/img/Yellow%20Modern%20We%20Are%20Hiring.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="113.0" layoutY="337.0" prefHeight="196.0" prefWidth="132.0" spacing="40.0">
          <children>
             <Label fx:id="tfidparticipant" text="Id_Participant :" />
             <Label fx:id="tfidevenemnt" text="Id_Evenement :" />
             <Label fx:id="tfiduser" text="Id_User :" />
          </children>
       </VBox>
-      <VBox layoutX="159.0" layoutY="197.0" prefHeight="250.0" prefWidth="273.0" spacing="30.0">
+      <VBox layoutX="341.0" layoutY="337.0" prefHeight="250.0" prefWidth="273.0" spacing="30.0">
          <children>
             <TextField fx:id="tf1" prefHeight="17.0" prefWidth="273.0" promptText="participant" />
             <TextField fx:id="tf2" promptText="evenement" />
             <TextField fx:id="tf3" promptText="user" />
          </children>
       </VBox>
-      <Button fx:id="ajout_souha" layoutX="14.0" layoutY="621.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="49.0" prefWidth="116.0" text="Ajouter">
+      <Button fx:id="ajout_souha" layoutX="1017.0" layoutY="520.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="49.0" prefWidth="116.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Ajouter">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="modifier_souha" layoutX="159.0" layoutY="621.0" mnemonicParsing="false" onAction="#modifier" prefHeight="49.0" prefWidth="116.0" style="-fx-background-color: #ffd344;" text="Modifier">
+      <Button fx:id="modifier_souha" layoutX="1017.0" layoutY="609.0" mnemonicParsing="false" onAction="#modifier" prefHeight="49.0" prefWidth="116.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Modifier">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="supprimer_souha" layoutX="320.0" layoutY="621.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="49.0" prefWidth="116.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Supprimer">
+      <Button fx:id="supprimer_souha" layoutX="1017.0" layoutY="737.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="49.0" prefWidth="116.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Supprimer">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <TableView fx:id="tfparticipant" layoutX="497.0" layoutY="122.0" onMousePressed="#index" prefHeight="335.0" prefWidth="799.0">
+      <TableView fx:id="tfparticipant" fixedCellSize="10.0" layoutX="700.0" layoutY="147.0" onMousePressed="#index" prefHeight="335.0" prefWidth="618.0" tableMenuButtonVisible="true">
         <columns>
           <TableColumn fx:id="colidparticipant" minWidth="1.0" prefWidth="223.0" text="Id_Participant " />
-          <TableColumn fx:id="colevenement" prefWidth="262.0" text="Id_Evenement " />
-            <TableColumn fx:id="coliduser" minWidth="0.0" prefWidth="313.0" text="Id_User " />
+          <TableColumn fx:id="colevenement" prefWidth="129.0" text="Id_Evenement " />
+            <TableColumn fx:id="coliduser" minWidth="50.0" prefWidth="446.0" sortType="DESCENDING" text="Id_User " />
         </columns>
       </TableView>
-      <Label fx:id="participant" alignment="TOP_RIGHT" cache="true" cacheHint="SPEED" contentDisplay="RIGHT" depthTest="ENABLE" graphicTextGap="10.0" layoutX="320.0" layoutY="31.0" mnemonicParsing="true" prefHeight="18.0" prefWidth="400.0" text="PARTICIPENT" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+      <Label fx:id="participant" alignment="TOP_RIGHT" cache="true" cacheHint="SPEED" contentDisplay="RIGHT" depthTest="ENABLE" graphicTextGap="10.0" layoutX="441.0" layoutY="36.0" mnemonicParsing="true" prefHeight="18.0" prefWidth="400.0" text="Participant" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
          <effect>
             <Glow />
          </effect>
+         <font>
+            <Font name="System Bold" size="67.0" />
+         </font>
       </Label>
       <Label fx:id="tfid" graphicTextGap="10.0" layoutX="199.0" layoutY="573.0" prefHeight="18.0" prefWidth="142.0" style="-fx-text-fill: transparent;" textFill="WHITE" textOverrun="WORD_ELLIPSIS" />
    </children>

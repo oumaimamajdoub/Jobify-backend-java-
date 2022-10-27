@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="818.0" prefWidth="1173.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ListeevenementfrontofficeController">
+<AnchorPane id="AnchorPane" mouseTransparent="true" prefHeight="818.0" prefWidth="1173.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ListeevenementfrontofficeController">
    <children>
-      <Label graphicTextGap="8.0" layoutX="426.0" layoutY="47.0" prefHeight="51.0" prefWidth="344.0" text="Liste Evenement" textAlignment="CENTER">
+      <ImageView fitHeight="351.0" fitWidth="393.0" layoutX="782.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../edu1/esprit/img/Yellow%20Modern%20We%20Are%20Hiring.png" />
+         </image>
+      </ImageView>
+      <Label graphicTextGap="8.0" layoutX="390.0" layoutY="14.0" prefHeight="81.0" prefWidth="495.0" text="Liste Evenement" textAlignment="CENTER">
          <font>
-            <Font size="41.0" />
+            <Font size="55.0" />
          </font>
       </Label>
-      <TableView fx:id="table" layoutX="5.0" layoutY="129.0" prefHeight="680.0" prefWidth="740.0">
+      <TableView fx:id="table" blendMode="SRC_ATOP" cache="true" cacheHint="QUALITY" layoutX="5.0" layoutY="129.0" prefHeight="680.0" prefWidth="740.0">
         <columns>
           <TableColumn fx:id="colnom" prefWidth="191.0" text="Nom" />
           <TableColumn fx:id="colnbr" prefWidth="186.0" text="Nombre_participant" />
@@ -23,7 +31,16 @@
             <TableColumn fx:id="coldf" prefWidth="211.0" text="Date_Fin" />
         </columns>
       </TableView>
-      <Button fx:id="parti" layoutX="853.0" layoutY="364.0" mnemonicParsing="false" onAction="#participe" prefHeight="59.0" prefWidth="168.0" text="Participe" />
-      <ImageView fx:id="qrcode" fitHeight="261.0" fitWidth="365.0" layoutX="770.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="parti" layoutX="782.0" layoutY="99.0" mnemonicParsing="false" onAction="#participe" prefHeight="101.0" prefWidth="351.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Participe">
+         <effect>
+            <BoxBlur iterations="0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font></Button>
+      <ImageView fx:id="qrcode" fitHeight="298.0" fitWidth="406.0" layoutX="757.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
