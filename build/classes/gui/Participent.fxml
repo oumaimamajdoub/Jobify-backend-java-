@@ -45,12 +45,15 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <TableView fx:id="tfparticipant" fixedCellSize="10.0" layoutX="700.0" layoutY="147.0" onMousePressed="#index" prefHeight="335.0" prefWidth="618.0" tableMenuButtonVisible="true">
+      <TableView fx:id="tfparticipant" blendMode="SRC_ATOP" cache="true" cacheHint="QUALITY" layoutX="700.0" layoutY="147.0" onMousePressed="#index" prefHeight="335.0" prefWidth="618.0" tableMenuButtonVisible="true">
         <columns>
           <TableColumn fx:id="colidparticipant" minWidth="1.0" prefWidth="223.0" text="Id_Participant " />
           <TableColumn fx:id="colevenement" prefWidth="129.0" text="Id_Evenement " />
             <TableColumn fx:id="coliduser" minWidth="50.0" prefWidth="446.0" sortType="DESCENDING" text="Id_User " />
         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
       <Label fx:id="participant" alignment="TOP_RIGHT" cache="true" cacheHint="SPEED" contentDisplay="RIGHT" depthTest="ENABLE" graphicTextGap="10.0" layoutX="441.0" layoutY="36.0" mnemonicParsing="true" prefHeight="18.0" prefWidth="400.0" text="Participant" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
          <effect>
